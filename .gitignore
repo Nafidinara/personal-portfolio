@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# design references (kept locally, excluded from repo + deploy)
+/public/reference/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

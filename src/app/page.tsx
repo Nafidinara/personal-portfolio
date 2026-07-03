@@ -1,65 +1,327 @@
 import Image from "next/image";
+import {
+  ArrowUpRight,
+  ExternalLink,
+  GitBranch,
+  Mail,
+  MessageCircle,
+  Trophy,
+} from "lucide-react";
+import { HeroSection } from "./components/hero-section";
+import { PillNav } from "./components/pill-nav";
+import { MoreProjects } from "./components/more-projects";
+import { ProjectStack } from "./components/project-stack";
+
+const assetBase = "/figma-assets";
+
+const featuredProjects = [
+  {
+    name: "ShopeeLaku",
+    file: "shopeelaku-automation.js",
+    category: "Automation",
+    description:
+      "Built a centralized dropshipping automation platform that enables sellers to manage multiple stores, automate product listings, optimize pricing strategies, and track business performance from a single dashboard.",
+    tags: ["NuxtJS", "Prisma", "Psql", "Python", "Docker", "Javascript"],
+    accent: "from-[#f9fecd] via-[#e2f0ff] to-white",
+    preview: `${assetBase}/featured-project-01.png`,
+    previewSize: { width: 1395, height: 766 },
+    previewBg: "#f9fecd",
+    liveUrl: "#",
+    repoUrl: "#",
+  },
+  {
+    name: "Creditopia",
+    file: "lending-ICP-creditopia.js",
+    category: "Fullstack",
+    description:
+      "Built a decentralized lending ecosystem using ICP and smart contracts, enabling secure peer-to-peer financing, transparent transactions, and global capital access for SMEs.",
+    tags: ["VueJS", "Rust", "Javascript", "Motoko"],
+    accent: "from-[#e2f0ff] via-white to-[#f9fecd]",
+    preview: `${assetBase}/featured-project-02.png`,
+    previewSize: { width: 1395, height: 766 },
+    previewBg: "#0f172a",
+    liveUrl: "#",
+    repoUrl: "#",
+  },
+  {
+    name: "Redooceit",
+    file: "redooceit-waste-management.js",
+    category: "Fullstack",
+    description:
+      "Built an end-to-end circular waste management platform with IoT integration, real-time monitoring, and operational dashboards to improve waste processing efficiency and community participation.",
+    tags: ["NextJS", "Golang", "Psql", "Redis", "Flutter"],
+    accent: "from-white via-[#e2f0ff] to-[#f9fecd]",
+    preview: `${assetBase}/featured-project-03.png`,
+    previewSize: { width: 1395, height: 766 },
+    previewBg: "#3ce0b0",
+    liveUrl: "#",
+    repoUrl: "#",
+  },
+];
+
+const moreProjects = [
+  {
+    name: "Votergate",
+    viewLabel: "Votergate",
+    description:
+      "Decentralized voting platform using blockchain and zero-knowledge proofs, enabling transparent elections, secure vote verification, and privacy-preserving vote counting.",
+    logo: `${assetBase}/more-project-logo-01.png`,
+    logoSize: { width: 306, height: 306 },
+    hover: `${assetBase}/hover-votergate.png`,
+    hoverSize: { width: 2210, height: 2026 },
+    viewUrl: "#",
+  },
+  {
+    name: "Taledotfun",
+    viewLabel: "Taledotfun",
+    description:
+      "Built a Web3 storytelling platform on Solana that empowers creators to publish, monetize, and preserve cultural narratives through NFTs, smart contracts, and DAO governance.",
+    logo: `${assetBase}/more-project-logo-02.png`,
+    logoSize: { width: 280, height: 288 },
+    hover: `${assetBase}/hover-talefun.png`,
+    hoverSize: { width: 2623, height: 1865 },
+    viewUrl: "#",
+  },
+  {
+    name: "Tourease",
+    viewLabel: "TourEase",
+    description:
+      "Travel planning platform that generates optimized routes and personalized itineraries, enabling travelers to discover attractions and maximize their time in a destination.",
+    logo: `${assetBase}/more-project-logo-03.png`,
+    logoSize: { width: 336, height: 336 },
+    hover: `${assetBase}/hover-tourease.png`,
+    hoverSize: { width: 2706, height: 1869 },
+    viewUrl: "#",
+  },
+];
+
+const experiences = [
+  { company: "World Wide", type: "Self Employed", role: "Freelance Software Engineer", date: "Jul 2020 - Present", logo: `${assetBase}/experience-logo-01.png` },
+  { company: "Redooce Indonesia", type: "Full Time", role: "Founder & Chief Executive Officer", date: "Mar 2023 - Nov 2025", logo: `${assetBase}/experience-logo-02.png` },
+  { company: "HARA", type: "Internship", role: "Blockchain Engineer", date: "Jul 2024 - Mar 2025", logo: `${assetBase}/experience-logo-03.png` },
+  { company: "Kecilin", type: "Full Time", role: "Backend Engineer", date: "Dec 2021 - Nov 2022", logo: `${assetBase}/experience-logo-04.png` },
+  { company: "Telkom Indonesia", type: "Internship", role: "Backend Engineer", date: "Apr 2021 - Jul 2021", logo: `${assetBase}/experience-logo-05.png` },
+];
+
+const achievements = [
+  {
+    status: "WINNER",
+    title: "Chain Fusion Hacker House Hackathon",
+    meta: "Aug 2024 · International · Bali, Indonesia",
+    tags: ["Beat 100+ teams", "Digital Innovation Track", "Selection for ASEAN Digital Award"],
+  },
+  {
+    status: "MERIT",
+    title: "Asia Pacific ICT Alliance (APICTA) Awards",
+    meta: "Dec 2023 · International · Hong Kong",
+    tags: ["International finalist", "Regional product showcase", "Startup innovation"],
+  },
+  {
+    status: "FINALIST",
+    title: "National Digital Product Competition",
+    meta: "2023 · Indonesia",
+    tags: ["Product strategy", "Software engineering", "Impact-driven solution"],
+  },
+];
+
+const blogPosts = Array.from({ length: 3 }, (_, index) => ({
+  title: "Baked-in Brilliance: Reranking Meets RL with mxbai-rerank-v2",
+  description:
+    "Second-generation reranking models using reinforcement learning, supporting 100+ languages with up to 32k token context.",
+  date: "24 June, 2025",
+  key: index,
+}));
+
+const contacts = [
+  ["EMAIL", "nafidinara@gmail.com", Mail],
+  ["LINKEDIN", "linkedin.com/in/nafidinara", ExternalLink],
+  ["GITHUB", "github.com/nafidinara", GitBranch],
+  ["TWITTER", "x.com/nafidinara", MessageCircle],
+] as const;
+
+function AvatarLogo({ small = false }: { small?: boolean }) {
+  const size = small ? 120 : 169;
+
+  return (
+    <Image
+      src={`${assetBase}/hero-avatar.png`}
+      alt={small ? "" : "Alfara profile portrait"}
+      width={338}
+      height={338}
+      priority={!small}
+      className={`rounded-full object-cover shadow-[0_28px_80px_rgba(0,68,167,0.16)] ${
+        small ? "h-[120px] w-[120px]" : "h-[169px] w-[169px]"
+      }`}
+      sizes={`${size}px`}
+    />
+  );
+}
+
+function SectionHeading({ eyebrow, children }: { eyebrow?: string; children: React.ReactNode }) {
+  return (
+    <div className="max-w-[704px]">
+      {eyebrow ? (
+        <p className="mb-5 font-mono text-[20px] font-bold tracking-[-0.01em] text-[#0044a7]">
+          {eyebrow}
+        </p>
+      ) : null}
+      <h2 className="text-[34px] leading-[1.14] tracking-[-0.02em] text-[#09090b] sm:text-[40px] sm:leading-[1.2]">
+        {children}
+      </h2>
+    </div>
+  );
+}
+
+function ProjectsSection() {
+  return (
+    <section id="projects" className="relative">
+      <ProjectStack projects={featuredProjects} />
+      <div className="relative mx-auto mt-20 max-w-[960px] border-t-[4px] border-[#e2f0ff] px-4 pt-10 text-center sm:px-6 lg:px-0">
+        <p className="mx-auto -mt-[66px] w-fit bg-[#fafdff] px-8 text-[24px] tracking-[-0.03em] text-[#71717b]">
+          More Projects
+        </p>
+        <MoreProjects projects={moreProjects} />
+      </div>
+    </section>
+  );
+}
+
+function ExperiencesSection() {
+  return (
+    <section id="experiences" className="mx-auto mt-[300px] max-w-[960px] px-4 sm:px-6 lg:px-0">
+      <h2 className="sr-only">Experiences</h2>
+      <SectionHeading eyebrow="EXPERIENCES">Companies, startups, and teams I’ve helped build with.</SectionHeading>
+      <div className="mt-20 space-y-16">
+        {experiences.map((experience) => (
+          <article className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between" key={experience.company}>
+            <div className="flex gap-5">
+              <div className="grid h-20 w-20 shrink-0 place-items-center overflow-hidden rounded-[16px] border border-[#b3ccde] bg-white">
+                <Image
+                  src={experience.logo}
+                  alt={`${experience.company} logo`}
+                  width={160}
+                  height={160}
+                  className="h-full w-full object-cover"
+                  sizes="80px"
+                />
+              </div>
+              <div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="font-mono text-[24px] font-semibold tracking-[-0.04em] text-[#09090b]">{experience.company}</h3>
+                  <span className="rounded-md border border-[#bfcfe6] bg-white px-2.5 py-1 text-sm text-[#52525c]">{experience.type}</span>
+                </div>
+                <p className="mt-2 font-hanken text-[20px] text-[#0044a7]">{experience.role}</p>
+              </div>
+            </div>
+            <p className="font-hanken text-[17.5px] text-[#333] sm:text-right">{experience.date}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function AchievementsSection() {
+  return (
+    <section id="achievements" className="mx-auto mt-[300px] max-w-[960px] px-4 sm:px-6 lg:px-0">
+      <h2 className="sr-only">Achievements</h2>
+      <SectionHeading eyebrow="ACHIEVEMENTS">Milestones from hackathons, awards, and product competitions.</SectionHeading>
+      <div className="mt-20 space-y-6">
+        {achievements.map((achievement) => (
+          <article className="rounded-[20px] border border-[#bfcfe6] bg-white p-6 shadow-[0_18px_45px_rgba(0,68,167,0.06)]" key={achievement.title}>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <p className="mb-3 inline-flex items-center gap-2 font-mono text-sm font-bold text-[#0044a7]"><Trophy size={16} />{achievement.status}</p>
+                <h3 className="font-hanken text-[28px] font-semibold tracking-[-0.04em] text-[#09090b]">{achievement.title}</h3>
+                <p className="mt-2 text-[#52525c]">{achievement.meta}</p>
+              </div>
+              <ArrowUpRight className="text-[#0044a7]" />
+            </div>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {achievement.tags.map((tag) => (
+                <span className="rounded-[8px] border border-[#dae9f8] px-3 py-2 font-mono text-sm font-semibold text-[#0044a7]" key={tag}>{tag}</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function BlogSection() {
+  return (
+    <section id="blog" className="mx-auto mt-[300px] max-w-[960px] px-4 sm:px-6 lg:px-0">
+      <h2 className="sr-only">Blog</h2>
+      <SectionHeading eyebrow="BLOG">Writing about AI, engineering, and product lessons from the field.</SectionHeading>
+      <div className="mt-12 space-y-0 overflow-hidden rounded-[24px] border border-[#bfcfe6] bg-white">
+        {blogPosts.map((post) => (
+          <article className="flex min-h-[190px] flex-col justify-between border-b border-[#dae9f8] p-7 last:border-b-0 sm:flex-row sm:items-center sm:gap-12" key={post.key}>
+            <div>
+              <p className="mb-3 font-mono text-sm font-semibold text-[#71717b]">{post.date}</p>
+              <h3 className="max-w-[620px] font-hanken text-[26px] font-semibold tracking-[-0.04em] text-[#09090b]">{post.title}</h3>
+              <p className="mt-3 max-w-[650px] leading-[1.45] text-[#52525c]">{post.description}</p>
+            </div>
+            <a className="focus-ring mt-5 inline-flex shrink-0 items-center gap-2 rounded-full border border-[#bfcfe6] px-5 py-3 font-hanken font-semibold text-[#0044a7] sm:mt-0" href="#contact">
+              Read Blog <ArrowUpRight size={16} />
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ContactSection() {
+  return (
+    <section id="contact" className="mx-auto mt-[280px] max-w-[960px] px-4 pb-28 text-center sm:px-6 lg:px-0">
+      <div className="mx-auto flex max-w-[654px] flex-col items-center">
+        <AvatarLogo small />
+        <h2 className="mt-9 font-hanken text-[42px] font-bold tracking-[-0.05em] text-[#09090b]">Start a conversation</h2>
+        <p className="mt-5 text-[20px] leading-[1.4] text-[#52525c]">
+          Open for chat and conversation for building something great together. I’m always open to new
+          interesting opportunities and collaboration
+        </p>
+        <a className="focus-ring mt-8 inline-flex h-14 items-center justify-center rounded-full border border-[#005fc6] bg-[#007aff] px-8 font-hanken text-[20px] font-semibold text-white shadow-[inset_0_1px_0_#8cc2ff,0_12px_32px_rgba(0,122,255,0.25)]" href="mailto:nafidinara@gmail.com">
+          Start Conversation
+        </a>
+      </div>
+      <div className="mt-20 grid gap-5 sm:grid-cols-2">
+        {contacts.map(([label, value, Icon]) => (
+          <a className="focus-ring flex min-h-[104px] items-center gap-5 rounded-[20px] border border-[#bfcfe6] bg-white p-6 text-left shadow-[0_12px_36px_rgba(0,68,167,0.05)]" href={label === "EMAIL" ? `mailto:${value}` : "#"} key={label}>
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#e2f0ff] text-[#0044a7]"><Icon size={22} /></span>
+            <span>
+              <span className="block font-mono text-sm font-bold text-[#0044a7]">{label}</span>
+              <span className="mt-1 block font-hanken text-[20px] font-semibold tracking-[-0.03em] text-[#09090b]">{value}</span>
+            </span>
+          </a>
+        ))}
+      </div>
+      <footer className="mt-20 flex flex-col gap-3 border-t border-[#bfcfe6] pt-8 text-[16px] text-[#71717b] sm:flex-row sm:items-center sm:justify-between">
+        <span>2026</span>
+        <span>Alfara Nafi Dinara</span>
+        <span>UTC+7</span>
+        <span>Jakarta, Indonesia</span>
+      </footer>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="relative">
+      <div className="hero-abstract pointer-events-none absolute left-1/2 top-0 -z-0 h-[1120px] w-[1920px] -translate-x-1/2" />
+      <div className="pointer-events-none absolute left-1/2 top-[1140px] -z-0 h-[420px] w-[420px] -translate-x-[760px] rounded-full bg-[#e2f0ff]/70 blur-3xl" />
+      <div className="pointer-events-none absolute right-[-140px] top-[2980px] -z-0 h-[520px] w-[520px] rounded-full bg-[#f9fecd]/80 blur-3xl" />
+      <div className="relative z-10">
+        <HeroSection />
+        <PillNav />
+        <ProjectsSection />
+        <ExperiencesSection />
+        <AchievementsSection />
+        <BlogSection />
+        <ContactSection />
+      </div>
+    </main>
   );
 }

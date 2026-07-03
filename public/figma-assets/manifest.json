@@ -1,0 +1,279 @@
+{
+  "source": {
+    "figmaUrl": "https://www.figma.com/design/FNdSgtQZZ133jzJmtnExPH/Work--Copy-?node-id=379-12366&t=zj2WmIdvj8l5GVgp-4",
+    "fileKey": "FNdSgtQZZ133jzJmtnExPH",
+    "rootNodeId": "379:12366",
+    "rootNodeName": "Work--Copy- / node 379:12366",
+    "capturedAt": "2026-07-02",
+    "mcpStatus": "assets_supplied_manually",
+    "mcpMessage": "Assets were manually exported by the user because Figma MCP hit the Starter-plan tool-call limit.",
+    "manualExportRequired": false
+  },
+  "exportGuidance": {
+    "destinationDirectory": "public/figma-assets",
+    "preferredRootScreenshot": {
+      "filename": "work-copy-node-379-12366-full-frame.png",
+      "format": "png",
+      "scale": "2x if available, otherwise 1x",
+      "sourceNodeId": "379:12366",
+      "use": "Full-frame visual reference for rebuilding the Next.js portfolio slice and checking spacing, hierarchy, and responsive crop decisions."
+    },
+    "manualSteps": [
+      "Open the Figma URL and select node 379:12366.",
+      "Export the selected frame as PNG to public/figma-assets/work-copy-node-379-12366-full-frame.png.",
+      "For vector-only decorative layers, export SVG where available and preserve layer names in filenames.",
+      "For raster photos, avatars, thumbnails, or logos, export PNG at 2x unless the source asset is already a JPG/photo export.",
+      "Update dimensions in this manifest after placing files. Dimensions are currently null because MCP binary export was unavailable."
+    ]
+  },
+  "assets": [
+    {
+      "filename": "work-copy-node-379-12366-full-frame.png",
+      "sourceNodeId": "379:12366",
+      "sourceName": "Full portfolio frame",
+      "type": "screenshot",
+      "format": "png",
+      "dimensions": {
+        "width": 3840,
+        "height": 21660
+      },
+      "required": true,
+      "nextUsage": "Use only as a build reference or QA overlay, not as production UI."
+    },
+    {
+      "filename": "hero-avatar.png",
+      "sourceNodeId": null,
+      "sourceName": "Hero avatar / profile image",
+      "type": "image",
+      "format": "png",
+      "dimensions": {
+        "width": 338,
+        "height": 338
+      },
+      "required": true,
+      "nextUsage": "Hero section avatar/profile visual. Use with next/image and meaningful alt text."
+    },
+    {
+      "filename": "hero-logo.svg",
+      "sourceNodeId": null,
+      "sourceName": "Hero logo / personal mark",
+      "type": "logo",
+      "format": "svg",
+      "dimensions": null,
+      "required": false,
+      "nextUsage": "Brand mark in header or hero if present in the design. Inline SVG or serve as image depending on current code style."
+    },
+    {
+      "filename": "hero-abstract-background.svg",
+      "sourceNodeId": null,
+      "sourceName": "Hero abstract background vector",
+      "type": "background-vector",
+      "format": "svg",
+      "dimensions": null,
+      "required": false,
+      "nextUsage": "Decorative hero background layer. Keep non-critical and hide from assistive tech."
+    },
+    {
+      "filename": "featured-project-01.png",
+      "sourceNodeId": null,
+      "sourceName": "Featured project card 1 visual",
+      "type": "project-card",
+      "format": "png",
+      "dimensions": {
+        "width": 1430,
+        "height": 1466
+      },
+      "required": true,
+      "nextUsage": "Primary image for the first featured project card. Updated to match the latest user-exported asset dimensions."
+    },
+    {
+      "filename": "featured-project-02.png",
+      "sourceNodeId": null,
+      "sourceName": "Featured project card 2 visual",
+      "type": "project-card",
+      "format": "png",
+      "dimensions": {
+        "width": 1430,
+        "height": 1466
+      },
+      "required": true,
+      "nextUsage": "Primary image for the second featured project card. Updated to match the latest user-exported asset dimensions."
+    },
+    {
+      "filename": "featured-project-03.png",
+      "sourceNodeId": null,
+      "sourceName": "Featured project card 3 visual",
+      "type": "project-card",
+      "format": "png",
+      "dimensions": {
+        "width": 1633,
+        "height": 1554
+      },
+      "required": true,
+      "nextUsage": "Primary image for the third featured project card if present. Updated to match the latest user-exported asset dimensions."
+    },
+    {
+      "filename": "more-project-logo-01.png",
+      "sourceNodeId": null,
+      "sourceName": "More projects logo 1",
+      "type": "project-logo",
+      "format": "png",
+      "dimensions": {
+        "width": 306,
+        "height": 306
+      },
+      "required": true,
+      "nextUsage": "Logo/icon for compact project listing. Prefer SVG for crisp scaling."
+    },
+    {
+      "filename": "more-project-logo-02.png",
+      "sourceNodeId": null,
+      "sourceName": "More projects logo 2",
+      "type": "project-logo",
+      "format": "png",
+      "dimensions": {
+        "width": 280,
+        "height": 288
+      },
+      "required": true,
+      "nextUsage": "Logo/icon for compact project listing. Prefer SVG for crisp scaling."
+    },
+    {
+      "filename": "more-project-logo-03.png",
+      "sourceNodeId": null,
+      "sourceName": "More projects logo 3",
+      "type": "project-logo",
+      "format": "png",
+      "dimensions": {
+        "width": 336,
+        "height": 336
+      },
+      "required": true,
+      "nextUsage": "Logo/icon for compact project listing. Prefer SVG for crisp scaling."
+    },
+    {
+      "filename": "experience-logo-01.png",
+      "sourceNodeId": null,
+      "sourceName": "Experience logo 1",
+      "type": "experience-logo",
+      "format": "png",
+      "dimensions": {
+        "width": 160,
+        "height": 160
+      },
+      "required": true,
+      "nextUsage": "Company/client logo in experience section. Use accessible text nearby rather than relying on logo alt alone."
+    },
+    {
+      "filename": "experience-logo-02.png",
+      "sourceNodeId": null,
+      "sourceName": "Experience logo 2",
+      "type": "experience-logo",
+      "format": "png",
+      "dimensions": {
+        "width": 160,
+        "height": 160
+      },
+      "required": true,
+      "nextUsage": "Company/client logo in experience section. Use accessible text nearby rather than relying on logo alt alone."
+    },
+    {
+      "filename": "experience-logo-03.png",
+      "sourceNodeId": null,
+      "sourceName": "Experience logo 3",
+      "type": "experience-logo",
+      "format": "png",
+      "dimensions": {
+        "width": 160,
+        "height": 160
+      },
+      "required": true,
+      "nextUsage": "Company/client logo in experience section. Use accessible text nearby rather than relying on logo alt alone."
+    },
+    {
+      "filename": "section-abstract-vector-01.svg",
+      "sourceNodeId": null,
+      "sourceName": "Abstract background vector 1",
+      "type": "background-vector",
+      "format": "svg",
+      "dimensions": null,
+      "required": false,
+      "nextUsage": "Decorative section background or accent from the Figma frame."
+    },
+    {
+      "filename": "experience-logo-04.png",
+      "sourceNodeId": null,
+      "sourceName": "Experience logo 4",
+      "type": "experience-logo",
+      "format": "png",
+      "dimensions": {
+        "width": 160,
+        "height": 160
+      },
+      "required": true,
+      "nextUsage": "Company/client logo in experience section. Use accessible text nearby rather than relying on logo alt alone."
+    },
+    {
+      "filename": "experience-logo-05.png",
+      "sourceNodeId": null,
+      "sourceName": "Experience logo 5",
+      "type": "experience-logo",
+      "format": "png",
+      "dimensions": {
+        "width": 160,
+        "height": 160
+      },
+      "required": true,
+      "nextUsage": "Company/client logo in experience section. Use accessible text nearby rather than relying on logo alt alone."
+    },
+    {
+      "filename": "section-abstract-vector-02.svg",
+      "sourceNodeId": null,
+      "sourceName": "Abstract background vector 2",
+      "type": "background-vector",
+      "format": "svg",
+      "dimensions": null,
+      "required": false,
+      "nextUsage": "Decorative section background or accent from the Figma frame."
+    },
+    {
+      "filename": "blog-visual.png",
+      "sourceNodeId": null,
+      "sourceName": "Blog visual",
+      "type": "blog-visual",
+      "format": "png",
+      "dimensions": null,
+      "required": false,
+      "nextUsage": "Blog or writing section visual if present in the design."
+    },
+    {
+      "filename": "contact-visual.png",
+      "sourceNodeId": null,
+      "sourceName": "Contact visual",
+      "type": "contact-visual",
+      "format": "png",
+      "dimensions": null,
+      "required": false,
+      "nextUsage": "Contact section illustration, portrait, or decorative visual if present in the design."
+    },
+    {
+      "filename": "featured-project-03-v2.png",
+      "sourceNodeId": null,
+      "sourceName": "Featured project card 3 visual (cache-busted update)",
+      "type": "project-card",
+      "format": "png",
+      "dimensions": {
+        "width": 1633,
+        "height": 1554
+      },
+      "required": true,
+      "nextUsage": "Updated Redooceit featured project card used by the Next.js slice."
+    }
+  ],
+  "notes": [
+    "Assets were supplied manually by the user and wired into the Next.js component slice.",
+    "Full-frame screenshot is retained only as visual QA/reference and is not rendered as production UI.",
+    "Hero abstract background could not be exported separately, so the implementation uses a coded CSS approximation.",
+    "Featured project 03 is served from featured-project-03-v2.png to force the updated Redooceit visual and avoid stale Next image cache."
+  ]
+}
