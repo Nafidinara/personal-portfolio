@@ -9,8 +9,10 @@ import {
 } from "lucide-react";
 import { HeroSection } from "./components/hero-section";
 import { PillNav } from "./components/pill-nav";
+import { Experiences } from "./components/experiences";
 import { MoreProjects } from "./components/more-projects";
 import { ProjectStack } from "./components/project-stack";
+import { Tools } from "./components/tools";
 
 const assetBase = "/figma-assets";
 
@@ -96,11 +98,64 @@ const moreProjects = [
 ];
 
 const experiences = [
-  { company: "World Wide", type: "Self Employed", role: "Freelance Software Engineer", date: "Jul 2020 - Present", logo: `${assetBase}/experience-logo-01.png` },
-  { company: "Redooce Indonesia", type: "Full Time", role: "Founder & Chief Executive Officer", date: "Mar 2023 - Nov 2025", logo: `${assetBase}/experience-logo-02.png` },
-  { company: "HARA", type: "Internship", role: "Blockchain Engineer", date: "Jul 2024 - Mar 2025", logo: `${assetBase}/experience-logo-03.png` },
-  { company: "Kecilin", type: "Full Time", role: "Backend Engineer", date: "Dec 2021 - Nov 2022", logo: `${assetBase}/experience-logo-04.png` },
-  { company: "Telkom Indonesia", type: "Internship", role: "Backend Engineer", date: "Apr 2021 - Jul 2021", logo: `${assetBase}/experience-logo-05.png` },
+  {
+    company: "World Wide",
+    type: "Self Employed",
+    role: "Freelance Software Engineer",
+    date: "Jul 2020 - Present",
+    logo: `${assetBase}/experience-logo-01.png`,
+    bullets: [
+      "Accumulated 4 years experience. Collaborated with more than 15 individuals and companies constructing websites, and services and enhancing the business processes.",
+      "Implemented clean code using stacks such as Laravel, Nodejs, Expressjs, Flask, Typescript, Solidity, and Vuejs. 90% of customer reviews are satisfied.",
+    ],
+  },
+  {
+    company: "Redooce Indonesia",
+    type: "Full Time",
+    role: "Founder & Chief Executive Officer",
+    date: "Mar 2023 - Nov 2025",
+    logo: `${assetBase}/experience-logo-02.png`,
+    bullets: [
+      "As Founder & CEO, I lead Redooceit’s vision, product direction, business strategy, partnerships, and operations, building it from concept into an early-stage sustainability technology venture.",
+      "Built Redooceit across 4 main service lines: waste management dashboard, project-based collaboration, event waste management, and sustainability partnership.",
+      "Managed a team of 15+ members across product, business, branding, operations, and partnership.",
+      "Supported waste management activities involving approximately 5000++ kg of waste, 3 events/projects, and 4 communities/TPS/partners.",
+      "Explored strategic opportunities in TPS digitalization, waste traceability, ESG reporting, event waste management, and circular economy implementation.",
+    ],
+  },
+  {
+    company: "HARA",
+    type: "Internship",
+    role: "Blockchain Engineer",
+    date: "Jul 2024 - Mar 2025",
+    logo: `${assetBase}/experience-logo-03.png`,
+    bullets: [
+      "Accumulated 4 years experience. Collaborated with more than 15 individuals and companies constructing websites, and services and enhancing the business processes.",
+      "Implemented clean code using stacks such as Laravel, Nodejs, Expressjs, Flask, Typescript, Solidity, and Vuejs. 90% of customer reviews are satisfied.",
+    ],
+  },
+  {
+    company: "Kecilin",
+    type: "Full Time",
+    role: "Backend Engineer",
+    date: "Dec 2021 - Nov 2022",
+    logo: `${assetBase}/experience-logo-04.png`,
+    bullets: [
+      "Developed and deployed a real-time dashboard monitoring system to manage and oversee 100+ CCTVs that running across Indonesia. Utilizing Express.js, Node.js, and MongoDB.",
+      "Conducted to lead blockchain storage development to support Kecilin compression storage process, implemented at the internal team and 2 Kecilin.id clients. Constructed with Solidity, IPFS, Hardhat, and Nodejs.",
+    ],
+  },
+  {
+    company: "Telkom Indonesia",
+    type: "Internship",
+    role: "Backend Engineer",
+    date: "Apr 2021 - Jul 2021",
+    logo: `${assetBase}/experience-logo-05.png`,
+    bullets: [
+      "Coordinated and managed the documentation API of 2 products using Swagger and Postman. Spearheaded the adoption of scrum SDLC methodology, reduced time-to-market by 30%, and increased productivity by 40%.",
+      "Facilitated lead engineer in refactoring product from Node Js to Typescript included added features, unit testing, and improved coverage above 85%.",
+    ],
+  },
 ];
 
 const achievements = [
@@ -188,42 +243,28 @@ function ProjectsSection() {
 
 function ExperiencesSection() {
   return (
-    <section id="experiences" className="mx-auto mt-[300px] max-w-[960px] px-4 sm:px-6 lg:px-0">
+    <section id="experiences" className="mx-auto mt-[300px] max-w-[720px] px-4 sm:px-6 lg:px-0">
       <h2 className="sr-only">Experiences</h2>
-      <SectionHeading eyebrow="EXPERIENCES">Companies, startups, and teams I’ve helped build with.</SectionHeading>
-      <div className="mt-20 space-y-16">
-        {experiences.map((experience) => (
-          <article className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between" key={experience.company}>
-            <div className="flex gap-5">
-              <div className="grid h-20 w-20 shrink-0 place-items-center overflow-hidden rounded-[16px] border border-[#b3ccde] bg-white">
-                <Image
-                  src={experience.logo}
-                  alt={`${experience.company} logo`}
-                  width={160}
-                  height={160}
-                  className="h-full w-full object-cover"
-                  sizes="80px"
-                />
-              </div>
-              <div>
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="font-mono text-[24px] font-semibold tracking-[-0.04em] text-[#09090b]">{experience.company}</h3>
-                  <span className="rounded-md border border-[#bfcfe6] bg-white px-2.5 py-1 text-sm text-[#52525c]">{experience.type}</span>
-                </div>
-                <p className="mt-2 font-hanken text-[20px] text-[#0044a7]">{experience.role}</p>
-              </div>
-            </div>
-            <p className="font-hanken text-[17.5px] text-[#333] sm:text-right">{experience.date}</p>
-          </article>
-        ))}
-      </div>
+      <SectionHeading eyebrow="EXPERIENCE">
+        Five years of shipping — from a national telco to my own funded startup.
+      </SectionHeading>
+      <Experiences experiences={experiences} />
+    </section>
+  );
+}
+
+function ToolsSection() {
+  return (
+    <section id="tools" className="mx-auto mt-[220px] max-w-[960px] px-4 sm:px-6 lg:px-0">
+      <h2 className="sr-only">Tools</h2>
+      <Tools />
     </section>
   );
 }
 
 function AchievementsSection() {
   return (
-    <section id="achievements" className="mx-auto mt-[300px] max-w-[960px] px-4 sm:px-6 lg:px-0">
+    <section id="achievements" className="mx-auto mt-[220px] max-w-[960px] px-4 sm:px-6 lg:px-0">
       <h2 className="sr-only">Achievements</h2>
       <SectionHeading eyebrow="ACHIEVEMENTS">Milestones from hackathons, awards, and product competitions.</SectionHeading>
       <div className="mt-20 space-y-6">
@@ -318,6 +359,7 @@ export default function Home() {
         <PillNav />
         <ProjectsSection />
         <ExperiencesSection />
+        <ToolsSection />
         <AchievementsSection />
         <BlogSection />
         <ContactSection />

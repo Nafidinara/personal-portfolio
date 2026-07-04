@@ -21,8 +21,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alfara Nafi Dinara — Portfolio",
-  description: "Software engineer portfolio for products across software, AI, blockchain, and startups.",
+  title: "Alfara — shipping software, AI & web3",
+  description:
+    "Fullstack engineer building practical products across software, AI, blockchain, and startups. 5 years of shipping — from national telco to my own funded startup.",
 };
 
 export default function RootLayout({
