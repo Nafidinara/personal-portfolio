@@ -9,9 +9,12 @@ import {
 } from "lucide-react";
 import { HeroSection } from "./components/hero-section";
 import { PillNav } from "./components/pill-nav";
+import { About } from "./components/about";
+import { Achievements } from "./components/achievements";
 import { Experiences } from "./components/experiences";
 import { MoreProjects } from "./components/more-projects";
 import { ProjectStack } from "./components/project-stack";
+import { Testimonials } from "./components/testimonials";
 import { Tools } from "./components/tools";
 
 const assetBase = "/figma-assets";
@@ -160,22 +163,76 @@ const experiences = [
 
 const achievements = [
   {
+    id: "icp",
     status: "WINNER",
+    accent: "#2388ff",
+    subtitle: "Internet Computer Protocol",
     title: "Chain Fusion Hacker House Hackathon",
-    meta: "Aug 2024 · International · Bali, Indonesia",
+    date: "Aug 2024",
+    location: "International · Bali, Indonesia",
     tags: ["Beat 100+ teams", "Digital Innovation Track", "Selection for ASEAN Digital Award"],
+    project: {
+      name: "Creditopia P2P lending",
+      techs: [
+        { name: "Rust", dot: "#ce4e2e" },
+        { name: "ICP", dot: "#8b5cf6" },
+        { name: "Solana", dot: "#7c3aed" },
+      ],
+    },
+    description: [
+      "Held by the Internet Computer Protocol (ICP) in August 2024 at Coinfest Asia — the largest blockchain festival in Asia. A 48-hour onsite hackathon with more than 100 teams from around the world.",
+      "We solve a real traditional-finance problem using ICP’s on-chain technology and the solution had to deliver impact directly to end users, not just impress the judges. We built Creditopia, a peer-to-peer (P2P) lending platform on the Internet Computer that connects MSMEs with a global network of lenders, offering financing that’s secure, transparent, and efficient. Built with Rust, Motoko, JavaScript, and Vue.js.",
+      "The most memorable part was competing alongside a team from completely different backgrounds — different campuses, different jobs — while managing our energy across a full 48 hours and making big decisions under tight time pressure. **We finished in 1st place and won $3,000 in funding.**",
+    ],
+    images: ["", ""],
   },
   {
+    id: "apicta",
     status: "MERIT",
+    accent: "#f97316",
+    subtitle: "ASEAN",
     title: "Asia Pacific ICT Alliance (APICTA) Awards",
-    meta: "Dec 2023 · International · Hong Kong",
+    date: "Dec 2023",
+    location: "International · Hongkong",
     tags: ["International finalist", "Regional product showcase", "Startup innovation"],
+    project: {
+      name: "Creditopia P2P lending",
+      techs: [
+        { name: "Rust", dot: "#ce4e2e" },
+        { name: "ICP", dot: "#8b5cf6" },
+        { name: "Solana", dot: "#7c3aed" },
+      ],
+    },
+    description: [
+      "Placeholder — replace with APICTA award context and event summary.",
+      "Placeholder — replace with product details, judging criteria, and outcomes.",
+      "Placeholder — replace with reflection or key result.",
+    ],
+    images: ["", ""],
   },
   {
-    status: "FINALIST",
-    title: "National Digital Product Competition",
-    meta: "2023 · Indonesia",
-    tags: ["Product strategy", "Software engineering", "Impact-driven solution"],
+    id: "identik",
+    status: "1st Runner Up",
+    accent: "#14b8a6",
+    subtitle: "ASEAN",
+    title: "IdenTIK - Indonesia Entrepreneur TIK",
+    date: "Oct 2023",
+    location: "National · Yogyakarta, Indonesia",
+    tags: ["Beat 100+ teams", "Digital Innovation Track", "Selection for ASEAN Digital Award"],
+    project: {
+      name: "Creditopia P2P lending",
+      techs: [
+        { name: "Rust", dot: "#ce4e2e" },
+        { name: "ICP", dot: "#8b5cf6" },
+        { name: "Solana", dot: "#7c3aed" },
+      ],
+    },
+    description: [
+      "Placeholder — replace with IdenTIK context and event summary.",
+      "Placeholder — replace with product details and judging criteria.",
+      "Placeholder — replace with reflection or key result.",
+    ],
+    images: ["", ""],
   },
 ];
 
@@ -243,7 +300,7 @@ function ProjectsSection() {
 
 function ExperiencesSection() {
   return (
-    <section id="experiences" className="mx-auto mt-[300px] max-w-[720px] px-4 sm:px-6 lg:px-0">
+    <section id="experiences" className="mx-auto mt-[300px] max-w-[960px] px-4 sm:px-6 lg:px-0">
       <h2 className="sr-only">Experiences</h2>
       <SectionHeading eyebrow="EXPERIENCE">
         Five years of shipping — from a national telco to my own funded startup.
@@ -266,26 +323,37 @@ function AchievementsSection() {
   return (
     <section id="achievements" className="mx-auto mt-[220px] max-w-[960px] px-4 sm:px-6 lg:px-0">
       <h2 className="sr-only">Achievements</h2>
-      <SectionHeading eyebrow="ACHIEVEMENTS">Milestones from hackathons, awards, and product competitions.</SectionHeading>
-      <div className="mt-20 space-y-6">
-        {achievements.map((achievement) => (
-          <article className="rounded-[20px] border border-[#bfcfe6] bg-white p-6 shadow-[0_18px_45px_rgba(0,68,167,0.06)]" key={achievement.title}>
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <p className="mb-3 inline-flex items-center gap-2 font-mono text-sm font-bold text-[#0044a7]"><Trophy size={16} />{achievement.status}</p>
-                <h3 className="font-hanken text-[28px] font-semibold tracking-[-0.04em] text-[#09090b]">{achievement.title}</h3>
-                <p className="mt-2 text-[#52525c]">{achievement.meta}</p>
-              </div>
-              <ArrowUpRight className="text-[#0044a7]" />
-            </div>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {achievement.tags.map((tag) => (
-                <span className="rounded-[8px] border border-[#dae9f8] px-3 py-2 font-mono text-sm font-semibold text-[#0044a7]" key={tag}>{tag}</span>
-              ))}
-            </div>
-          </article>
-        ))}
+      <SectionHeading eyebrow="ACHIEVEMENTS">
+        Five years of shipping — from a national telco to my own funded startup.
+      </SectionHeading>
+      <Achievements items={achievements} />
+    </section>
+  );
+}
+
+function AboutSection() {
+  return (
+    <section id="about" className="mx-auto mt-[220px] max-w-[960px] px-4 sm:px-6 lg:px-0">
+      <p className="mb-4 font-mono text-[16px] font-bold tracking-[-0.01em] text-[#0044a7]">
+        ABOUT
+      </p>
+      <About />
+    </section>
+  );
+}
+
+function WordsSection() {
+  return (
+    <section id="words" className="mx-auto mt-[220px] max-w-[960px] px-4 sm:px-6 lg:px-0">
+      <div className="mx-auto max-w-[720px] text-center">
+        <p className="mb-4 font-mono text-[16px] font-bold tracking-[-0.01em] text-[#0044a7]">
+          WORDS
+        </p>
+        <h2 className="font-hanken text-[30px] font-semibold leading-[1.14] tracking-[-0.02em] text-[#09090b] sm:text-[34px]">
+          What people say once we’ve actually shipped together.
+        </h2>
       </div>
+      <Testimonials />
     </section>
   );
 }
@@ -361,6 +429,8 @@ export default function Home() {
         <ExperiencesSection />
         <ToolsSection />
         <AchievementsSection />
+        <WordsSection />
+        <AboutSection />
         <BlogSection />
         <ContactSection />
       </div>

@@ -80,7 +80,7 @@ function MoreProjectCard({
             y: isHovered ? 0 : -20,
             scale: isHovered ? 1 : 0.94,
           }}
-          className="absolute inset-x-0 bottom-2 flex justify-center"
+          className="absolute inset-x-0 bottom-0 flex justify-center"
           initial={false}
           transition={{ duration: 0.46, ease: PREMIUM_EASE }}
         >
@@ -99,10 +99,15 @@ function MoreProjectCard({
       <motion.div
         animate={
           shouldReduceMotion
-            ? undefined
-            : { scale: isHovered ? 1.04 : 1, y: isHovered ? -4 : 0 }
+            ? { opacity: isHovered ? 0 : 1, height: isHovered ? 0 : 140 }
+            : {
+                opacity: isHovered ? 0 : 1,
+                scale: isHovered ? 0.7 : 1,
+                y: isHovered ? -20 : 0,
+                height: isHovered ? 0 : 140,
+              }
         }
-        className="relative h-[140px] w-[140px]"
+        className="relative w-[140px] overflow-hidden"
         transition={{ duration: 0.35, ease: PREMIUM_EASE }}
       >
         <Image
@@ -115,7 +120,11 @@ function MoreProjectCard({
         />
       </motion.div>
 
-      <div className="relative mt-6 w-full">
+      <motion.div
+        animate={{ marginTop: isHovered ? -8 : 24 }}
+        className="relative w-full"
+        transition={{ duration: 0.35, ease: PREMIUM_EASE }}
+      >
         <motion.div
           animate={{
             opacity: isHovered ? 0 : 1,
@@ -158,7 +167,7 @@ function MoreProjectCard({
             View {project.viewLabel}
           </motion.a>
         </motion.div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

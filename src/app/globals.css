@@ -263,12 +263,48 @@ input {
   }
 }
 
+@keyframes marquee-ltr {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  animation: marquee-ltr 42s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track--reverse {
+  animation-name: marquee-rtl;
+  animation-duration: 46s;
+}
+
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-living-aura,
   .hero-glow-rings,
   .hero-avatar-ring,
   .hero-avatar-shimmer::after,
-  .hero-input-cursor {
+  .hero-input-cursor,
+  .marquee-track {
     animation: none;
   }
 

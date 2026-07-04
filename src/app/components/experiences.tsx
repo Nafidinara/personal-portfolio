@@ -21,7 +21,7 @@ export function Experiences({ experiences }: { experiences: ExperienceItem[] }) 
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <ul className="mt-16 space-y-4">
+    <ul className="mt-20 space-y-10">
       {experiences.map((experience, index) => (
         <ExperienceRow
           experience={experience}
