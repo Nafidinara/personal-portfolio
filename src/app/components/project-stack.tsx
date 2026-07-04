@@ -54,8 +54,8 @@ export function ProjectStack({ projects }: { projects: ProjectStackItem[] }) {
       style={{ height: `${100 + n * 45}vh` }}
     >
       <div className="sticky top-24">
-        <div className="mx-auto max-w-[720px] px-6 lg:px-0">
-          <div className="max-w-[620px]">
+        <div className="mx-auto max-w-[960px] px-4 sm:px-6 lg:px-0">
+          <div className="max-w-[704px]">
             <p className="mb-4 font-mono text-[16px] font-bold tracking-[-0.01em] text-[#0044a7]">
               PROJECTS
             </p>

@@ -1,11 +1,9 @@
 import Image from "next/image";
 import {
-  ArrowUpRight,
   ExternalLink,
   GitBranch,
   Mail,
   MessageCircle,
-  Trophy,
 } from "lucide-react";
 import { HeroSection } from "./components/hero-section";
 import { PillNav } from "./components/pill-nav";
@@ -16,6 +14,7 @@ import { MoreProjects } from "./components/more-projects";
 import { ProjectStack } from "./components/project-stack";
 import { Testimonials } from "./components/testimonials";
 import { Tools } from "./components/tools";
+import { Blog } from "./components/blog";
 
 const assetBase = "/figma-assets";
 
@@ -236,13 +235,26 @@ const achievements = [
   },
 ];
 
-const blogPosts = Array.from({ length: 3 }, (_, index) => ({
-  title: "Baked-in Brilliance: Reranking Meets RL with mxbai-rerank-v2",
-  description:
-    "Second-generation reranking models using reinforcement learning, supporting 100+ languages with up to 32k token context.",
-  date: "24 June, 2025",
-  key: index,
-}));
+const blogPosts = [
+  {
+    title: "Baked-in Brilliance: Reranking Meets RL with mxbai-rerank-v2",
+    description:
+      "Second-generation reranking models using reinforcement learning, supporting 100+ languages with up to 32k token context.",
+    date: "24 June, 2025",
+  },
+  {
+    title: "Baked-in Brilliance: Reranking Meets RL with mxbai-rerank-v2",
+    description:
+      "Second-generation reranking models using reinforcement learning, supporting 100+ languages with up to 32k token context.",
+    date: "24 June, 2025",
+  },
+  {
+    title: "Baked-in Brilliance: Reranking Meets RL with mxbai-rerank-v2",
+    description:
+      "Second-generation reranking models using reinforcement learning, supporting 100+ languages with up to 32k token context.",
+    date: "24 June, 2025",
+  },
+];
 
 const contacts = [
   ["EMAIL", "nafidinara@gmail.com", Mail],
@@ -362,21 +374,10 @@ function BlogSection() {
   return (
     <section id="blog" className="mx-auto mt-[300px] max-w-[960px] px-4 sm:px-6 lg:px-0">
       <h2 className="sr-only">Blog</h2>
-      <SectionHeading eyebrow="BLOG">Writing about AI, engineering, and product lessons from the field.</SectionHeading>
-      <div className="mt-12 space-y-0 overflow-hidden rounded-[24px] border border-[#bfcfe6] bg-white">
-        {blogPosts.map((post) => (
-          <article className="flex min-h-[190px] flex-col justify-between border-b border-[#dae9f8] p-7 last:border-b-0 sm:flex-row sm:items-center sm:gap-12" key={post.key}>
-            <div>
-              <p className="mb-3 font-mono text-sm font-semibold text-[#71717b]">{post.date}</p>
-              <h3 className="max-w-[620px] font-hanken text-[26px] font-semibold tracking-[-0.04em] text-[#09090b]">{post.title}</h3>
-              <p className="mt-3 max-w-[650px] leading-[1.45] text-[#52525c]">{post.description}</p>
-            </div>
-            <a className="focus-ring mt-5 inline-flex shrink-0 items-center gap-2 rounded-full border border-[#bfcfe6] px-5 py-3 font-hanken font-semibold text-[#0044a7] sm:mt-0" href="#contact">
-              Read Blog <ArrowUpRight size={16} />
-            </a>
-          </article>
-        ))}
-      </div>
+      <SectionHeading eyebrow="BLOG">
+        Notes I write down so I don&apos;t pay for the same lesson twice.
+      </SectionHeading>
+      <Blog posts={blogPosts} />
     </section>
   );
 }
