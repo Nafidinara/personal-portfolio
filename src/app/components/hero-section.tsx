@@ -11,6 +11,8 @@ import {
 } from "motion/react";
 import { FormEvent, KeyboardEvent, PointerEvent, useMemo, useState } from "react";
 
+import { AskAlfaraSidebar } from "./ask-alfara/ask-alfara-sidebar";
+
 const assetBase = "/figma-assets";
 
 const heroRoles = [
@@ -277,6 +279,8 @@ export function HeroSection() {
   const [inputValue, setInputValue] = useState("");
   const [assistantMessage, setAssistantMessage] = useState("AI ready · Ask Alfara’s portfolio");
   const [isFocused, setIsFocused] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [seedQuestion, setSeedQuestion] = useState<string | null>(null);
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
   const [activeRole, setActiveRole] = useState<HeroRoleId>("software");
   const shouldReduceMotion = useReducedMotion();
@@ -325,10 +329,19 @@ export function HeroSection() {
   function handleSuggestionClick(suggestion: (typeof suggestions)[number]) {
     setInputValue(suggestion.question);
     setAssistantMessage(suggestion.response);
+    openSidebarWith(suggestion.question);
+  }
 
-    if (suggestion.target !== "#home") {
-      window.setTimeout(() => scrollToSection(suggestion.target), 180);
-    }
+  function openSidebarWith(query: string) {
+    setSeedQuestion(query);
+    setSidebarOpen(true);
+    setAssistantMessage("Ask Alfara is thinking · answers grounded in real profile");
+  }
+
+  function closeSidebar() {
+    setSidebarOpen(false);
+    setSeedQuestion(null);
+    setAssistantMessage("AI ready · Ask Alfara’s portfolio");
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -340,10 +353,8 @@ export function HeroSection() {
       return;
     }
 
-    const matchedSuggestion = suggestions.find((suggestion) => suggestion.question === query);
-    setAssistantMessage(
-      matchedSuggestion?.response ?? "Got it — Alfara’s portfolio assistant is ready to route this question.",
-    );
+    openSidebarWith(query);
+    setInputValue("");
   }
 
   function handleAvatarKeyDown(event: KeyboardEvent<HTMLDivElement>) {
@@ -676,6 +687,11 @@ export function HeroSection() {
           )}
         </AnimatePresence>
       </div>
+      <AskAlfaraSidebar
+        isOpen={sidebarOpen}
+        onClose={closeSidebar}
+        seedQuestion={seedQuestion}
+      />
     </section>
   );
 }

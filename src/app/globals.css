@@ -312,3 +312,12 @@ input {
     display: none;
   }
 }
+
+/* Ask Alfara sidebar reduced-motion — motion library's useReducedMotion covers
+   framer motions; this covers the streaming caret animation reused from the hero. */
+@media (prefers-reduced-motion: reduce) {
+  [aria-label="Ask Alfara chat"] .hero-input-cursor {
+    animation: none;
+    opacity: 0;
+  }
+}
