@@ -34,13 +34,14 @@ describe("portfolio homepage", () => {
     expect(homeLink).not.toHaveAttribute("aria-current");
   });
 
-  it("turns suggestion chips into portfolio assistant prompts", () => {
-    render(<Home />);
+  it("opens the Ask Alfara sidebar when a suggestion chip is clicked", async () => {
+    const { container } = render(<Home />);
 
     fireEvent.click(screen.getByRole("button", { name: "Who is Alfara?" }));
 
-    expect(screen.getByLabelText("Ask about Alfara")).toHaveValue("Who is Alfara?");
-    expect(screen.getByText(/fullstack engineer building practical products/i)).toBeInTheDocument();
+    await waitFor(() => {
+      expect(container.querySelector('[aria-label="Ask Alfara chat"]')).not.toBeNull();
+    });
   });
 
   it("renders layered patterned hero background details", () => {
