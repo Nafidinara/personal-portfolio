@@ -7,15 +7,15 @@ import { motion, useReducedMotion } from "motion/react";
 const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
 
 const ABOUT_HEADING =
-  "I’m Alfara. I build things that serve a purpose and evoke delight. I simplify the complex, craft memorability, and ship products that last.";
+  "I’m Alfara. I turn ideas into working products — web apps, AI automations, and web3 systems that businesses actually run on.";
 
-const BELIEF_TITLE = "What I Believe";
+const BELIEF_TITLE = "How I Work";
 
 const BELIEF_PARAGRAPHS = [
-  "The greatest work is the one we’re inspired by and passionate for. The greatest ideas are built by people who are aligned with their vision and desire to create. Freelancing truly allows this by letting you choose projects you want to work on with the people that inspire you, on a schedule that fits your lifestyle.",
-  "It lets you grow as a professional, having full control over the direction of your career and your personal brand. There’s never been a better time to explore our passions and creative freedom, and build a career doing so.",
-  "With Portal, I aim to make it easier for creatives like you to handle the essential parts of freelancing with ease and style. From collecting payments globally and on time to sending proposals or invoices without messing with PDFs, all while showcasing your unique persona brand, Portal simplifies the business side so you can focus on what you love.",
-  "It’s the beginning of the journey for Portal, so I’d love to hear how Portal could make freelancing even better for you. Join me on this journey, and let’s build something amazing together.",
+  "Most projects don’t fail because of bad code. They fail because of slow feedback, unclear scope, and builders who disappear mid-project. I run things the opposite way: short cycles, a working demo you can click every week, and honest updates when something turns out harder than it looked.",
+  "Five years of shipping — freelancing for 15+ clients, backend engineering at a national telco, and founding my own funded startup — taught me to think like an owner, not a ticket-taker. I’ll push back on a feature that won’t move your numbers, and I’ll tell you when a cheaper path gets you the same result.",
+  "Whether you need a web app, an AI automation that erases hours of manual work, or a web3 product, the deal is the same: clear communication, production-quality code, and a partner who cares whether the thing actually works for your business — not just whether it compiles.",
+  "If that sounds like the engineer you want on your side, tell me what you’re building. The first conversation costs nothing, and you’ll walk away with a clearer plan either way.",
 ];
 
 export function About({ avatarSrc = "/figma-assets/hero-avatar.png" }: { avatarSrc?: string }) {
@@ -106,7 +106,7 @@ export function About({ avatarSrc = "/figma-assets/hero-avatar.png" }: { avatarS
           }
           whileTap={shouldReduceMotion ? undefined : { scale: 0.97 }}
         >
-          Know Alfara Deeper
+          Tell Me About Your Project
           <ArrowRight size={16} strokeWidth={2.2} />
         </motion.a>
       </motion.div>

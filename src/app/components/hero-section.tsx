@@ -63,7 +63,7 @@ const roleContent: Record<HeroRoleId, { subtitle: string; segments: Segment[] }>
   software: {
     subtitle: "Software Engineer",
     segments: [
-      { kind: "text", value: "I build Full Stack apps web apps, dashboards, and APIs with " },
+      { kind: "text", value: "I build full-stack web apps, dashboards, and APIs with " },
       { kind: "pill", label: "Next.js", tint: "bg-[#0f172a] text-white", dot: "bg-white" },
       { kind: "pill", label: "TypeScript", tint: "bg-white text-[#0044a7] border border-[#bfcfe6]", dot: "bg-[#3178c6]" },
       { kind: "pill", label: "Node.js", tint: "bg-white text-[#0f172a] border border-[#bfcfe6]", dot: "bg-[#5fa04e]" },
@@ -76,14 +76,14 @@ const roleContent: Record<HeroRoleId, { subtitle: string; segments: Segment[] }>
       { kind: "pill", label: "Vercel", tint: "bg-[#0f172a] text-white", dot: "bg-white" },
       { kind: "pill", label: "AWS", tint: "bg-white text-[#0f172a] border border-[#bfcfe6]", dot: "bg-[#ff9900]" },
       { kind: "pill", label: "VPS", tint: "bg-white text-[#0f172a] border border-[#bfcfe6]", dot: "bg-[#8b5cf6]" },
-      { kind: "text", value: ". In " },
-      { kind: "highlight", value: "3 years experience" },
-      { kind: "text", value: " I have worked with " },
+      { kind: "text", value: ". Over " },
+      { kind: "highlight", value: "3 years" },
+      { kind: "text", value: " I've delivered for " },
       { kind: "highlight", value: "15+ clients and collaborators" },
       {
         kind: "text",
         value:
-          ", delivering reliable digital products from clean interfaces and database flows to backend services, with ",
+          " — clean interfaces, solid data flows, and backend services that don't fall over — with ",
       },
       { kind: "highlight", value: "90% positive feedback" },
       { kind: "text", value: "." },
@@ -99,10 +99,10 @@ const roleContent: Record<HeroRoleId, { subtitle: string; segments: Segment[] }>
       {
         kind: "text",
         value:
-          " popular model API (Claude, OpenAI, DeepSeek, Gemini), and automation tools, turning repetitive tasks into practical systems. In a recent project, I helped a client manage ",
+          " and model APIs (Claude, OpenAI, DeepSeek, Gemini), turning repetitive work into systems that run themselves. Recently, I helped a client manage ",
       },
       { kind: "highlight", value: "10,000+ products across 30 stores" },
-      { kind: "text", value: " from one platform in minutes." },
+      { kind: "text", value: " from one platform — work that used to take days, done in minutes." },
     ],
   },
   blockchain: {
@@ -159,8 +159,8 @@ const suggestions = [
 ];
 
 const introLines = [
-  "I build products across software, AI, blockchain, and startups",
-  "helping ideas become scalable solutions used by businesses and communities.",
+  "I build web apps, AI automations, and web3 products for founders and teams —",
+  "shipped to production, trusted by 15+ clients with 90% positive feedback.",
 ];
 
 const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
@@ -575,7 +575,7 @@ export function HeroSection() {
                 whileTap={shouldReduceMotion ? undefined : { scale: 0.985 }}
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  About Alfara
+                  See What I&apos;ve Shipped
                   <Sparkles size={17} strokeWidth={1.8} />
                 </span>
               </motion.button>

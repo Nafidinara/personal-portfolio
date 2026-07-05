@@ -16,7 +16,7 @@ describe("portfolio homepage", () => {
     expect(screen.getByRole("heading", { name: /Experiences/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Achievements/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Blog/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /Start a conversation/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Have a project in mind\?/i })).toBeInTheDocument();
     expect(document.body.innerHTML).not.toContain("work-copy-node-379-12366-full-frame.png");
   });
 
