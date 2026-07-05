@@ -58,7 +58,7 @@ const featuredProjects = [
     preview: `${assetBase}/featured-project-03.png`,
     previewSize: { width: 1395, height: 766 },
     previewBg: "#3ce0b0",
-    liveUrl: "#",
+    liveUrl: "https://redooceit.com",
     repoUrl: "#",
   },
 ];
@@ -104,7 +104,7 @@ const experiences = [
     company: "World Wide",
     type: "Self Employed",
     role: "Freelance Software Engineer",
-    date: "Jul 2020 - Present",
+    date: "Jan 2022 - Present",
     logo: `${assetBase}/experience-logo-01.png`,
     bullets: [
       "Accumulated 4 years experience. Collaborated with more than 15 individuals and companies constructing websites, and services and enhancing the business processes.",
@@ -129,18 +129,19 @@ const experiences = [
     company: "HARA",
     type: "Internship",
     role: "Blockchain Engineer",
-    date: "Jul 2024 - Mar 2025",
+    date: "Aug 2024 - Feb 2025",
     logo: `${assetBase}/experience-logo-03.png`,
     bullets: [
-      "Accumulated 4 years experience. Collaborated with more than 15 individuals and companies constructing websites, and services and enhancing the business processes.",
-      "Implemented clean code using stacks such as Laravel, Nodejs, Expressjs, Flask, Typescript, Solidity, and Vuejs. 90% of customer reviews are satisfied.",
+      "Developed blockchain traceability solutions for a large enterprise client, making supply-chain data verifiable end to end.",
+      "Researched network performance across EVM and non-EVM platforms — Avalanche, Polygon, Hedera, Ripple — and evaluated Hyperledger frameworks for enterprise use.",
+      "Performed security testing on smart contracts prior to deployment to the network.",
     ],
   },
   {
     company: "Kecilin",
     type: "Full Time",
     role: "Backend Engineer",
-    date: "Dec 2021 - Nov 2022",
+    date: "Jan 2022 - Nov 2022",
     logo: `${assetBase}/experience-logo-04.png`,
     bullets: [
       "Developed and deployed a real-time dashboard monitoring system to manage and oversee 100+ CCTVs that running across Indonesia. Utilizing Express.js, Node.js, and MongoDB.",
@@ -189,23 +190,23 @@ const achievements = [
     id: "apicta",
     status: "MERIT",
     accent: "#f97316",
-    subtitle: "ASEAN",
+    subtitle: "Asia Pacific",
     title: "Asia Pacific ICT Alliance (APICTA) Awards",
     date: "Dec 2023",
-    location: "International · Hongkong",
-    tags: ["International finalist", "Regional product showcase", "Startup innovation"],
+    location: "International · Hong Kong",
+    tags: ["Challenged 300+ teams", "16 APICTA economies", "Healthtech × machine learning"],
     project: {
-      name: "Creditopia P2P lending",
+      name: "Myoscope Alert — heart attack detection",
       techs: [
-        { name: "Rust", dot: "#ce4e2e" },
-        { name: "ICP", dot: "#8b5cf6" },
-        { name: "Solana", dot: "#7c3aed" },
+        { name: "Machine Learning", dot: "#22c55e" },
+        { name: "Python", dot: "#ffd43b" },
+        { name: "Signal Processing", dot: "#0ea5e9" },
       ],
     },
     description: [
-      "Placeholder — replace with APICTA award context and event summary.",
-      "Placeholder — replace with product details, judging criteria, and outcomes.",
-      "Placeholder — replace with reflection or key result.",
+      "APICTA is the Asia-Pacific region's 'ICT Oscars', initiated by 16 economies including Australia, China, Hong Kong, Japan, Singapore, and Indonesia. Teams from universities and industry across the region compete in front of international judging panels.",
+      "We built Myoscope Alert: a myocardial infarction (heart attack) detection system that pairs a digital stethoscope with a machine learning model trained on 2,500 heartbeat signals — turning an affordable device into an early-warning tool.",
+      "Competing against 300+ teams from different universities and industries across Asia Pacific, we brought home a **Merit award for Indonesia** in Hong Kong.",
     ],
     images: ["", ""],
   },
@@ -213,23 +214,23 @@ const achievements = [
     id: "identik",
     status: "1st Runner Up",
     accent: "#14b8a6",
-    subtitle: "ASEAN",
+    subtitle: "KOMINFO",
     title: "IdenTIK - Indonesia Entrepreneur TIK",
     date: "Oct 2023",
     location: "National · Yogyakarta, Indonesia",
-    tags: ["Beat 100+ teams", "Digital Innovation Track", "Selection for ASEAN Digital Award"],
+    tags: ["Contended with 190+ teams", "National ICT innovation", "Gateway to regional awards"],
     project: {
-      name: "Creditopia P2P lending",
+      name: "VoterGate — blockchain voting",
       techs: [
-        { name: "Rust", dot: "#ce4e2e" },
-        { name: "ICP", dot: "#8b5cf6" },
-        { name: "Solana", dot: "#7c3aed" },
+        { name: "NodeJS", dot: "#5fa04e" },
+        { name: "Solidity", dot: "#0f172a" },
+        { name: "Flutter", dot: "#02569b" },
       ],
     },
     description: [
-      "Placeholder — replace with IdenTIK context and event summary.",
-      "Placeholder — replace with product details and judging criteria.",
-      "Placeholder — replace with reflection or key result.",
+      "IdenTIK (Indonesia Entrepreneur TIK), run by KOMINFO, is the transformation of the INAICTA and ID.UP programs — a national hunt for ICT products that can compete at the regional and international level.",
+      "We entered VoterGate, a modern voting platform built for high security and scalability using blockchain and decentralized technology, so that elections become transparent, verifiable, and tamper-resistant.",
+      "Contending with 190+ teams from different industries across Indonesia, VoterGate took **1st Runner Up nationally**.",
     ],
     images: ["", ""],
   },
@@ -237,30 +238,30 @@ const achievements = [
 
 const blogPosts = [
   {
-    title: "Baked-in Brilliance: Reranking Meets RL with mxbai-rerank-v2",
+    title: "An LLM-Based Conversational Recommender for Long-Term Crypto Portfolios",
     description:
-      "Second-generation reranking models using reinforcement learning, supporting 100+ languages with up to 32k token context.",
-    date: "24 June, 2025",
+      "How we built and published a conversational recommender system that personalizes long-term cryptocurrency portfolios — presented at IEEE ICoICT 2025.",
+    date: "May, 2025",
   },
   {
-    title: "Baked-in Brilliance: Reranking Meets RL with mxbai-rerank-v2",
+    title: "EVM vs Non-EVM for Enterprise Traceability: What I Learned at HARA",
     description:
-      "Second-generation reranking models using reinforcement learning, supporting 100+ languages with up to 32k token context.",
-    date: "24 June, 2025",
+      "Benchmarking Avalanche, Polygon, Hedera, and Ripple — plus Hyperledger — for a real enterprise supply-chain traceability system, and where each one breaks.",
+    date: "Feb, 2025",
   },
   {
-    title: "Baked-in Brilliance: Reranking Meets RL with mxbai-rerank-v2",
+    title: "Automating 10,000+ Products Across 30 Stores: Architecture Notes",
     description:
-      "Second-generation reranking models using reinforcement learning, supporting 100+ languages with up to 32k token context.",
-    date: "24 June, 2025",
+      "The queue-driven design behind ShopeeLaku's dropshipping automation — and why days of manual product management collapsed into minutes.",
+    date: "June, 2025",
   },
 ];
 
 const contacts = [
-  ["EMAIL", "nafidinara@gmail.com", Mail],
-  ["LINKEDIN", "linkedin.com/in/nafidinara", ExternalLink],
-  ["GITHUB", "github.com/nafidinara", GitBranch],
-  ["TWITTER", "x.com/nafidinara", MessageCircle],
+  ["EMAIL", "nafidinara@gmail.com", Mail, "mailto:nafidinara@gmail.com?subject=Project%20inquiry"],
+  ["LINKEDIN", "linkedin.com/in/nafidinara", ExternalLink, "https://linkedin.com/in/nafidinara"],
+  ["GITHUB", "github.com/nafidinara", GitBranch, "https://github.com/nafidinara"],
+  ["TWITTER", "x.com/nafidinara", MessageCircle, "https://x.com/nafidinara"],
 ] as const;
 
 function AvatarLogo({ small = false }: { small?: boolean }) {
@@ -336,7 +337,7 @@ function AchievementsSection() {
     <section id="achievements" className="mx-auto mt-[220px] max-w-[960px] px-4 sm:px-6 lg:px-0">
       <h2 className="sr-only">Achievements</h2>
       <SectionHeading eyebrow="ACHIEVEMENTS">
-        Five years of shipping — from a national telco to my own funded startup.
+        Proof under pressure — international hackathon wins and awards, judged against 100+ teams.
       </SectionHeading>
       <Achievements items={achievements} />
     </section>
@@ -387,18 +388,18 @@ function ContactSection() {
     <section id="contact" className="mx-auto mt-[280px] max-w-[960px] px-4 pb-28 text-center sm:px-6 lg:px-0">
       <div className="mx-auto flex max-w-[654px] flex-col items-center">
         <AvatarLogo small />
-        <h2 className="mt-9 font-hanken text-[42px] font-bold tracking-[-0.05em] text-[#09090b]">Start a conversation</h2>
+        <h2 className="mt-9 font-hanken text-[42px] font-bold tracking-[-0.05em] text-[#09090b]">Have a project in mind?</h2>
         <p className="mt-5 text-[20px] leading-[1.4] text-[#52525c]">
-          Open for chat and conversation for building something great together. I’m always open to new
-          interesting opportunities and collaboration
+          Tell me what you’re building and where you’re stuck. I reply within 24 hours — and even if
+          we don’t end up working together, you’ll leave with a clearer plan.
         </p>
-        <a className="focus-ring mt-8 inline-flex h-14 items-center justify-center rounded-full border border-[#005fc6] bg-[#007aff] px-8 font-hanken text-[20px] font-semibold text-white shadow-[inset_0_1px_0_#8cc2ff,0_12px_32px_rgba(0,122,255,0.25)]" href="mailto:nafidinara@gmail.com">
-          Start Conversation
+        <a className="focus-ring mt-8 inline-flex h-14 items-center justify-center rounded-full border border-[#005fc6] bg-[#007aff] px-8 font-hanken text-[20px] font-semibold text-white shadow-[inset_0_1px_0_#8cc2ff,0_12px_32px_rgba(0,122,255,0.25)]" href="mailto:nafidinara@gmail.com?subject=Project%20inquiry&body=Hi%20Alfara%2C%0A%0AWhat%20I%27m%20building%3A%20%0AWhere%20I%27m%20stuck%3A%20%0ATimeline%3A%20%0A">
+          Send Me Your Project
         </a>
       </div>
       <div className="mt-20 grid gap-5 sm:grid-cols-2">
-        {contacts.map(([label, value, Icon]) => (
-          <a className="focus-ring flex min-h-[104px] items-center gap-5 rounded-[20px] border border-[#bfcfe6] bg-white p-6 text-left shadow-[0_12px_36px_rgba(0,68,167,0.05)]" href={label === "EMAIL" ? `mailto:${value}` : "#"} key={label}>
+        {contacts.map(([label, value, Icon, href]) => (
+          <a className="focus-ring flex min-h-[104px] items-center gap-5 rounded-[20px] border border-[#bfcfe6] bg-white p-6 text-left shadow-[0_12px_36px_rgba(0,68,167,0.05)]" href={href} key={label} rel={label === "EMAIL" ? undefined : "noopener noreferrer"} target={label === "EMAIL" ? undefined : "_blank"}>
             <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#e2f0ff] text-[#0044a7]"><Icon size={22} /></span>
             <span>
               <span className="block font-mono text-sm font-bold text-[#0044a7]">{label}</span>
