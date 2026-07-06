@@ -29,7 +29,7 @@ export function MessageBubble({
 
   return (
     <motion.div
-      className={`max-w-[86%] px-3.5 py-2.5 text-[14.5px] leading-[1.5] shadow-[0_2px_10px_rgba(0,68,167,0.04)] ${wrapperClass}`}
+      className={`max-w-[86%] px-3.5 py-2.5 text-left text-[14.5px] leading-[1.5] shadow-[0_2px_10px_rgba(0,68,167,0.04)] ${wrapperClass}`}
       initial={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 10, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.34, ease: PREMIUM_EASE }}
