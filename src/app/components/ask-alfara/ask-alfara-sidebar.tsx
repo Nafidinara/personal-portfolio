@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Send, X } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { FormEvent, useEffect, useRef, useState } from "react";
@@ -108,21 +109,26 @@ export function AskAlfaraSidebar({
             transition={{ duration: 0.5, ease: PREMIUM_EASE }}
             role="dialog"
           >
-            <header className="flex items-center gap-3 border-b border-[#dae9f8] px-4 py-3">
-              <div
-                aria-hidden="true"
-                className="h-[38px] w-[38px] flex-none rounded-full shadow-[0_0_24px_rgba(35,136,255,0.3)]"
-                style={{
-                  background:
-                    "radial-gradient(circle at 35% 34%, #fff, #2388ff 78%)",
-                }}
-              />
-              <div>
-                <div className="text-[16px] font-semibold leading-none text-[#0d1b2e]">
-                  Ask Alfara
+            <header className="flex items-center gap-3 border-b border-[#dae9f8] px-4 py-3 text-left">
+              <div className="relative h-[42px] w-[42px] flex-none">
+                <Image
+                  alt="Alfara"
+                  className="rounded-full object-cover"
+                  fill
+                  sizes="42px"
+                  src="/figma-assets/hero-avatar.png"
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute bottom-0 right-0 h-[10px] w-[10px] rounded-full border-2 border-white bg-[#22c55e]"
+                />
+              </div>
+              <div className="min-w-0 leading-tight">
+                <div className="text-[15px] font-semibold text-[#0d1b2e]">
+                  Alfara
                 </div>
-                <div className="mt-1 text-[12px] text-[#0044a7]">
-                  AI · grounded in real profile
+                <div className="mt-0.5 text-[12px] text-[#5b6472]">
+                  Usually replies within 12 hours
                 </div>
               </div>
               <button
@@ -137,14 +143,14 @@ export function AskAlfaraSidebar({
 
             <div
               aria-live="polite"
-              className="flex flex-1 flex-col gap-3 overflow-y-auto px-4 py-4"
+              className="flex flex-1 flex-col gap-3 overflow-y-auto px-4 py-4 text-left"
               ref={streamRef}
             >
               {!hasMessages ? (
                 <>
-                  <div className="max-w-[86%] self-start rounded-[18px] rounded-bl-[6px] border border-[#dae9f8] bg-white/70 px-3.5 py-2.5 text-[14.5px] leading-[1.5] text-[#333] backdrop-blur-md">
-                    Hi — I&apos;m Alfara&apos;s assistant. Ask about his work, stack, or
-                    availability. I only answer from his real profile.
+                  <div className="max-w-[86%] self-start rounded-[18px] rounded-bl-[6px] border border-[#dae9f8] bg-white/70 px-3.5 py-2.5 text-left text-[14.5px] leading-[1.5] text-[#333] backdrop-blur-md">
+                    Hey, I&apos;m Alfara. Ask me anything about my work, stack, or
+                    availability. Answers come straight from my profile.
                   </div>
                   <StarterChips onPick={handlePickStarter} disabled={isStreaming} />
                 </>
@@ -161,8 +167,8 @@ export function AskAlfaraSidebar({
               {showThinkingDots ? <ThinkingDots /> : null}
 
               {error ? (
-                <div className="self-start max-w-[86%] rounded-[18px] rounded-bl-[6px] border border-[#f0c9c9] bg-[#fff6f6] px-3.5 py-2.5 text-[14px] text-[#7a2020]">
-                  I glitched mid-answer. You can reach Alfara directly at{" "}
+                <div className="self-start max-w-[86%] rounded-[18px] rounded-bl-[6px] border border-[#f0c9c9] bg-[#fff6f6] px-3.5 py-2.5 text-left text-[14px] text-[#7a2020]">
+                  Sorry, I glitched mid-answer. You can reach me at{" "}
                   <a className="underline" href="mailto:nafidinara@gmail.com">
                     nafidinara@gmail.com
                   </a>
@@ -171,7 +177,7 @@ export function AskAlfaraSidebar({
               ) : null}
             </div>
 
-            <footer className="border-t border-[#dae9f8] p-3">
+            <footer className="border-t border-[#dae9f8] p-3 text-left">
               <form
                 className={`flex h-12 items-center gap-2 rounded-full border bg-white/72 px-3 backdrop-blur-xl transition-[border-color,box-shadow] duration-300 ${
                   input

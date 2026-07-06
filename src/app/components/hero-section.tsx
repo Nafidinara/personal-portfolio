@@ -277,7 +277,7 @@ function RoleDetailPanel({
 
 export function HeroSection() {
   const [inputValue, setInputValue] = useState("");
-  const [assistantMessage, setAssistantMessage] = useState("AI ready · Ask Alfara’s portfolio");
+  const [assistantMessage, setAssistantMessage] = useState("Ask Alfara anything · answers grounded in his profile");
   const [isFocused, setIsFocused] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [seedQuestion, setSeedQuestion] = useState<string | null>(null);
@@ -327,7 +327,6 @@ export function HeroSection() {
   }
 
   function handleSuggestionClick(suggestion: (typeof suggestions)[number]) {
-    setInputValue(suggestion.question);
     setAssistantMessage(suggestion.response);
     openSidebarWith(suggestion.question);
   }
@@ -335,13 +334,14 @@ export function HeroSection() {
   function openSidebarWith(query: string) {
     setSeedQuestion(query);
     setSidebarOpen(true);
-    setAssistantMessage("Ask Alfara is thinking · answers grounded in real profile");
+    setAssistantMessage("Talking with Alfara · answers grounded in his profile");
   }
 
   function closeSidebar() {
     setSidebarOpen(false);
     setSeedQuestion(null);
-    setAssistantMessage("AI ready · Ask Alfara’s portfolio");
+    setInputValue("");
+    setAssistantMessage("Ask Alfara anything · answers grounded in his profile");
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -640,8 +640,8 @@ export function HeroSection() {
                       setInputValue(event.target.value);
                       setAssistantMessage(
                         event.target.value
-                          ? "AI ready · Press send to ask Alfara’s portfolio"
-                          : "AI ready · Ask Alfara’s portfolio",
+                          ? "Press send to ask Alfara"
+                          : "Ask Alfara anything · answers grounded in his profile",
                       );
                     }}
                     onFocus={() => setIsFocused(true)}
