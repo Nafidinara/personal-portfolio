@@ -634,7 +634,7 @@ export function HeroSection() {
                   ) : null}
                   <input
                     aria-label="Ask about Alfara"
-                    className="relative z-10 min-w-0 flex-1 bg-transparent text-[16px] text-[#333] outline-none placeholder:text-[#71717b] sm:text-[17px]"
+                    className="relative z-10 block w-full min-w-0 bg-transparent text-[16px] text-[#333] outline-none placeholder:text-[#71717b] sm:text-[17px]"
                     onBlur={() => setIsFocused(false)}
                     onChange={(event) => {
                       setInputValue(event.target.value);
