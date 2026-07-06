@@ -24,7 +24,7 @@ const featuredProjects = [
     file: "shopeelaku-automation.js",
     category: "Automation",
     description:
-      "Built a centralized dropshipping automation platform that enables sellers to manage multiple stores, automate product listings, optimize pricing strategies, and track business performance from a single dashboard.",
+      "Dropshipping automation that runs multiple stores from one dashboard. Listings, pricing, and performance tracking happen automatically, so sellers spend minutes on work that used to eat whole days.",
     tags: ["NuxtJS", "Prisma", "Psql", "Python", "Docker", "Javascript"],
     accent: "from-[#f9fecd] via-[#e2f0ff] to-white",
     preview: `${assetBase}/featured-project-01.png`,
@@ -38,7 +38,7 @@ const featuredProjects = [
     file: "lending-ICP-creditopia.js",
     category: "Fullstack",
     description:
-      "Built a decentralized lending ecosystem using ICP and smart contracts, enabling secure peer-to-peer financing, transparent transactions, and global capital access for SMEs.",
+      "Peer-to-peer lending on the Internet Computer. Smart contracts handle the financing, every transaction lives on-chain, and SMEs get access to lenders far beyond their local banks.",
     tags: ["VueJS", "Rust", "Javascript", "Motoko"],
     accent: "from-[#e2f0ff] via-white to-[#f9fecd]",
     preview: `${assetBase}/featured-project-02.png`,
@@ -52,7 +52,7 @@ const featuredProjects = [
     file: "redooceit-waste-management.js",
     category: "Fullstack",
     description:
-      "Built an end-to-end circular waste management platform with IoT integration, real-time monitoring, and operational dashboards to improve waste processing efficiency and community participation.",
+      "Circular waste management, end to end: IoT sensors feed real-time monitoring and operations dashboards, so communities process more waste with less guesswork.",
     tags: ["NextJS", "Golang", "Psql", "Redis", "Flutter"],
     accent: "from-white via-[#e2f0ff] to-[#f9fecd]",
     preview: `${assetBase}/featured-project-03.png`,
@@ -68,7 +68,7 @@ const moreProjects = [
     name: "Votergate",
     viewLabel: "Votergate",
     description:
-      "Decentralized voting platform using blockchain and zero-knowledge proofs, enabling transparent elections, secure vote verification, and privacy-preserving vote counting.",
+      "Voting on blockchain with zero-knowledge proofs: elections stay transparent, every vote is verifiable, and no ballot reveals who cast it.",
     logo: `${assetBase}/more-project-logo-01.png`,
     logoSize: { width: 306, height: 306 },
     hover: `${assetBase}/hover-votergate.png`,
@@ -79,7 +79,7 @@ const moreProjects = [
     name: "Taledotfun",
     viewLabel: "Taledotfun",
     description:
-      "Built a Web3 storytelling platform on Solana that empowers creators to publish, monetize, and preserve cultural narratives through NFTs, smart contracts, and DAO governance.",
+      "Web3 storytelling on Solana. Creators publish and get paid for cultural narratives through NFTs, smart contracts, and DAO governance.",
     logo: `${assetBase}/more-project-logo-02.png`,
     logoSize: { width: 280, height: 288 },
     hover: `${assetBase}/hover-talefun.png`,
@@ -90,7 +90,7 @@ const moreProjects = [
     name: "Tourease",
     viewLabel: "TourEase",
     description:
-      "Travel planning platform that generates optimized routes and personalized itineraries, enabling travelers to discover attractions and maximize their time in a destination.",
+      "Travel planner that builds optimized routes and personal itineraries, so you see more of a destination in the time you have.",
     logo: `${assetBase}/more-project-logo-03.png`,
     logoSize: { width: 336, height: 336 },
     hover: `${assetBase}/hover-tourease.png`,
@@ -107,8 +107,8 @@ const experiences = [
     date: "Jan 2022 - Present",
     logo: `${assetBase}/experience-logo-01.png`,
     bullets: [
-      "Accumulated 4 years experience. Collaborated with more than 15 individuals and companies constructing websites, and services and enhancing the business processes.",
-      "Implemented clean code using stacks such as Laravel, Nodejs, Expressjs, Flask, Typescript, Solidity, and Vuejs. 90% of customer reviews are satisfied.",
+      "Four years of freelance work with 15+ individuals and companies, building websites, services, and the internal tools their businesses run on.",
+      "Shipped clean, maintainable code across Laravel, Node.js, Express, Flask, TypeScript, Solidity, and Vue.js. 90% of client reviews came back positive.",
     ],
   },
   {
@@ -121,7 +121,7 @@ const experiences = [
       "As Founder & CEO, I lead Redooceit’s vision, product direction, business strategy, partnerships, and operations, building it from concept into an early-stage sustainability technology venture.",
       "Built Redooceit across 4 main service lines: waste management dashboard, project-based collaboration, event waste management, and sustainability partnership.",
       "Managed a team of 15+ members across product, business, branding, operations, and partnership.",
-      "Supported waste management activities involving approximately 5000++ kg of waste, 3 events/projects, and 4 communities/TPS/partners.",
+      "Supported waste management activities covering 5,000+ kg of waste across 3 events and 4 community and TPS partners.",
       "Explored strategic opportunities in TPS digitalization, waste traceability, ESG reporting, event waste management, and circular economy implementation.",
     ],
   },
@@ -133,7 +133,7 @@ const experiences = [
     logo: `${assetBase}/experience-logo-03.png`,
     bullets: [
       "Developed blockchain traceability solutions for a large enterprise client, making supply-chain data verifiable end to end.",
-      "Researched network performance across EVM and non-EVM platforms — Avalanche, Polygon, Hedera, Ripple — and evaluated Hyperledger frameworks for enterprise use.",
+      "Benchmarked network performance across EVM and non-EVM platforms (Avalanche, Polygon, Hedera, Ripple) and evaluated Hyperledger frameworks for enterprise use.",
       "Performed security testing on smart contracts prior to deployment to the network.",
     ],
   },
@@ -144,8 +144,8 @@ const experiences = [
     date: "Jan 2022 - Nov 2022",
     logo: `${assetBase}/experience-logo-04.png`,
     bullets: [
-      "Developed and deployed a real-time dashboard monitoring system to manage and oversee 100+ CCTVs that running across Indonesia. Utilizing Express.js, Node.js, and MongoDB.",
-      "Conducted to lead blockchain storage development to support Kecilin compression storage process, implemented at the internal team and 2 Kecilin.id clients. Constructed with Solidity, IPFS, Hardhat, and Nodejs.",
+      "Built and deployed a real-time dashboard that monitors 100+ CCTVs running across Indonesia, using Express.js, Node.js, and MongoDB.",
+      "Led blockchain storage development for Kecilin's compression pipeline, rolled out to the internal team and 2 Kecilin.id clients. Built with Solidity, IPFS, Hardhat, and Node.js.",
     ],
   },
   {
@@ -155,8 +155,8 @@ const experiences = [
     date: "Apr 2021 - Jul 2021",
     logo: `${assetBase}/experience-logo-05.png`,
     bullets: [
-      "Coordinated and managed the documentation API of 2 products using Swagger and Postman. Spearheaded the adoption of scrum SDLC methodology, reduced time-to-market by 30%, and increased productivity by 40%.",
-      "Facilitated lead engineer in refactoring product from Node Js to Typescript included added features, unit testing, and improved coverage above 85%.",
+      "Managed API documentation for 2 products using Swagger and Postman. Drove the team's adoption of scrum, cutting time-to-market by 30% and lifting productivity by 40%.",
+      "Worked with the lead engineer to refactor a product from Node.js to TypeScript, adding features and unit tests and raising coverage above 85%.",
     ],
   },
 ];
@@ -180,9 +180,9 @@ const achievements = [
       ],
     },
     description: [
-      "Held by the Internet Computer Protocol (ICP) in August 2024 at Coinfest Asia — the largest blockchain festival in Asia. A 48-hour onsite hackathon with more than 100 teams from around the world.",
-      "We solve a real traditional-finance problem using ICP’s on-chain technology and the solution had to deliver impact directly to end users, not just impress the judges. We built Creditopia, a peer-to-peer (P2P) lending platform on the Internet Computer that connects MSMEs with a global network of lenders, offering financing that’s secure, transparent, and efficient. Built with Rust, Motoko, JavaScript, and Vue.js.",
-      "The most memorable part was competing alongside a team from completely different backgrounds — different campuses, different jobs — while managing our energy across a full 48 hours and making big decisions under tight time pressure. **We finished in 1st place and won $3,000 in funding.**",
+      "Held by the Internet Computer Protocol (ICP) in August 2024 at Coinfest Asia, the largest blockchain festival in the region. A 48-hour onsite hackathon with more than 100 teams from around the world.",
+      "The brief: solve a real traditional-finance problem with ICP’s on-chain technology, and deliver impact to end users, not just impress the judges. We built Creditopia, a peer-to-peer (P2P) lending platform on the Internet Computer that connects MSMEs with a global network of lenders, offering financing that’s secure, transparent, and efficient. Built with Rust, Motoko, JavaScript, and Vue.js.",
+      "The most memorable part was competing alongside teammates from completely different backgrounds, different campuses, different jobs, while managing our energy across a full 48 hours and making big decisions under tight time pressure. **We finished in 1st place and won $3,000 in funding.**",
     ],
     images: ["", ""],
   },
@@ -196,7 +196,7 @@ const achievements = [
     location: "International · Hong Kong",
     tags: ["Challenged 300+ teams", "16 APICTA economies", "Healthtech × machine learning"],
     project: {
-      name: "Myoscope Alert — heart attack detection",
+      name: "Myoscope Alert · heart attack detection",
       techs: [
         { name: "Machine Learning", dot: "#22c55e" },
         { name: "Python", dot: "#ffd43b" },
@@ -205,7 +205,7 @@ const achievements = [
     },
     description: [
       "APICTA is the Asia-Pacific region's 'ICT Oscars', initiated by 16 economies including Australia, China, Hong Kong, Japan, Singapore, and Indonesia. Teams from universities and industry across the region compete in front of international judging panels.",
-      "We built Myoscope Alert: a myocardial infarction (heart attack) detection system that pairs a digital stethoscope with a machine learning model trained on 2,500 heartbeat signals — turning an affordable device into an early-warning tool.",
+      "We built Myoscope Alert: a myocardial infarction (heart attack) detection system that pairs a digital stethoscope with a machine learning model trained on 2,500 heartbeat signals, turning an affordable device into an early-warning tool.",
       "Competing against 300+ teams from different universities and industries across Asia Pacific, we brought home a **Merit award for Indonesia** in Hong Kong.",
     ],
     images: ["", ""],
@@ -220,7 +220,7 @@ const achievements = [
     location: "National · Yogyakarta, Indonesia",
     tags: ["Contended with 190+ teams", "National ICT innovation", "Gateway to regional awards"],
     project: {
-      name: "VoterGate — blockchain voting",
+      name: "VoterGate · blockchain voting",
       techs: [
         { name: "NodeJS", dot: "#5fa04e" },
         { name: "Solidity", dot: "#0f172a" },
@@ -228,7 +228,7 @@ const achievements = [
       ],
     },
     description: [
-      "IdenTIK (Indonesia Entrepreneur TIK), run by KOMINFO, is the transformation of the INAICTA and ID.UP programs — a national hunt for ICT products that can compete at the regional and international level.",
+      "IdenTIK (Indonesia Entrepreneur TIK), run by KOMINFO, grew out of the INAICTA and ID.UP programs: a national hunt for ICT products that can compete at the regional and international level.",
       "We entered VoterGate, a modern voting platform built for high security and scalability using blockchain and decentralized technology, so that elections become transparent, verifiable, and tamper-resistant.",
       "Contending with 190+ teams from different industries across Indonesia, VoterGate took **1st Runner Up nationally**.",
     ],
@@ -240,19 +240,19 @@ const blogPosts = [
   {
     title: "An LLM-Based Conversational Recommender for Long-Term Crypto Portfolios",
     description:
-      "How we built and published a conversational recommender system that personalizes long-term cryptocurrency portfolios — presented at IEEE ICoICT 2025.",
+      "How we built and published a conversational recommender system that personalizes long-term cryptocurrency portfolios. Presented at IEEE ICoICT 2025.",
     date: "May, 2025",
   },
   {
     title: "EVM vs Non-EVM for Enterprise Traceability: What I Learned at HARA",
     description:
-      "Benchmarking Avalanche, Polygon, Hedera, and Ripple — plus Hyperledger — for a real enterprise supply-chain traceability system, and where each one breaks.",
+      "Benchmarking Avalanche, Polygon, Hedera, Ripple, and Hyperledger for a real enterprise supply-chain traceability system, and where each one breaks.",
     date: "Feb, 2025",
   },
   {
     title: "Automating 10,000+ Products Across 30 Stores: Architecture Notes",
     description:
-      "The queue-driven design behind ShopeeLaku's dropshipping automation — and why days of manual product management collapsed into minutes.",
+      "The queue-driven design behind ShopeeLaku's dropshipping automation, and why days of manual product management collapsed into minutes.",
     date: "June, 2025",
   },
 ];
@@ -316,7 +316,7 @@ function ExperiencesSection() {
     <section id="experiences" className="mx-auto mt-[300px] max-w-[960px] px-4 sm:px-6 lg:px-0">
       <h2 className="sr-only">Experiences</h2>
       <SectionHeading eyebrow="EXPERIENCE">
-        Five years of shipping — from a national telco to my own funded startup.
+        Five years of shipping, from a national telco to my own funded startup.
       </SectionHeading>
       <Experiences experiences={experiences} />
     </section>
@@ -337,7 +337,7 @@ function AchievementsSection() {
     <section id="achievements" className="mx-auto mt-[220px] max-w-[960px] px-4 sm:px-6 lg:px-0">
       <h2 className="sr-only">Achievements</h2>
       <SectionHeading eyebrow="ACHIEVEMENTS">
-        Proof under pressure — international hackathon wins and awards, judged against 100+ teams.
+        Proof under pressure: international hackathon wins and awards, judged against 100+ teams.
       </SectionHeading>
       <Achievements items={achievements} />
     </section>
@@ -390,8 +390,8 @@ function ContactSection() {
         <AvatarLogo small />
         <h2 className="mt-9 font-hanken text-[42px] font-bold tracking-[-0.05em] text-[#09090b]">Have a project in mind?</h2>
         <p className="mt-5 text-[20px] leading-[1.4] text-[#52525c]">
-          Tell me what you’re building and where you’re stuck. I reply within 24 hours — and even if
-          we don’t end up working together, you’ll leave with a clearer plan.
+          Tell me what you’re building and where you’re stuck. I reply within 24 hours. Even if we
+          don’t end up working together, you’ll leave with a clearer plan.
         </p>
         <a className="focus-ring mt-8 inline-flex h-14 items-center justify-center rounded-full border border-[#005fc6] bg-[#007aff] px-8 font-hanken text-[20px] font-semibold text-white shadow-[inset_0_1px_0_#8cc2ff,0_12px_32px_rgba(0,122,255,0.25)]" href="mailto:nafidinara@gmail.com?subject=Project%20inquiry&body=Hi%20Alfara%2C%0A%0AWhat%20I%27m%20building%3A%20%0AWhere%20I%27m%20stuck%3A%20%0ATimeline%3A%20%0A">
           Send Me Your Project

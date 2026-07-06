@@ -21,9 +21,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alfara — Freelance Software Engineer for Web, AI & Web3 Products",
+  title: "Alfara · Freelance Software Engineer for Web, AI & Web3 Products",
   description:
-    "Hire a fullstack engineer who ships. Web apps, AI automations, and web3 products for founders and teams — 15+ clients, 90% positive feedback, international hackathon winner. First conversation is free.",
+    "Hire a fullstack engineer who ships. Web apps, AI automations, and web3 products for founders and teams. 15+ clients, 90% positive feedback, international hackathon winner. First conversation is free.",
 };
 
 export default function RootLayout({

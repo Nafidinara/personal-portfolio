@@ -85,16 +85,16 @@ const roleContent: Record<HeroRoleId, { subtitle: string; segments: Segment[] }>
       {
         kind: "text",
         value:
-          " — clean interfaces, solid data flows, and backend services that don't fall over — with ",
+          ": clean interfaces, solid data flows, and backend services that don't fall over. ",
       },
       { kind: "highlight", value: "90% positive feedback" },
-      { kind: "text", value: "." },
+      { kind: "text", value: " to show for it." },
     ],
   },
   ai: {
     subtitle: "AI Automation Builder",
     segments: [
-      { kind: "text", value: "I build AI powered tools and workflows with " },
+      { kind: "text", value: "I build AI-powered tools and workflows with " },
       { kind: "pill", label: "Python", tint: "bg-white text-[#0f172a] border border-[#bfcfe6]", dot: "bg-[#ffd43b]" },
       { kind: "pill", label: "LLMs", tint: "bg-white text-[#0f172a] border border-[#bfcfe6]", dot: "bg-[#22c55e]" },
       { kind: "pill", label: "LangChain", tint: "bg-white text-[#0f172a] border border-[#bfcfe6]", dot: "bg-[#0ea5e9]" },
@@ -104,7 +104,7 @@ const roleContent: Record<HeroRoleId, { subtitle: string; segments: Segment[] }>
           " and model APIs (Claude, OpenAI, DeepSeek, Gemini), turning repetitive work into systems that run themselves. Recently, I helped a client manage ",
       },
       { kind: "highlight", value: "10,000+ products across 30 stores" },
-      { kind: "text", value: " from one platform — work that used to take days, done in minutes." },
+      { kind: "text", value: " from one platform. Work that took days now finishes in minutes." },
     ],
   },
   blockchain: {
@@ -113,7 +113,7 @@ const roleContent: Record<HeroRoleId, { subtitle: string; segments: Segment[] }>
       { kind: "text", value: "I build Web3 products with " },
       { kind: "pill", label: "Solidity", tint: "bg-white text-[#0f172a] border border-[#bfcfe6]", dot: "bg-[#0f172a]" },
       { kind: "pill", label: "Typescript", tint: "bg-white text-[#0044a7] border border-[#bfcfe6]", dot: "bg-[#3178c6]" },
-      { kind: "text", value: ", ZK concept, and smart contract tooling working from " },
+      { kind: "text", value: ", ZK concepts, and smart contract tooling, working from " },
       { kind: "highlight", value: "contract logic" },
       { kind: "text", value: " and " },
       { kind: "highlight", value: "decentralized storage to blockchain-based applications" },
@@ -150,7 +150,7 @@ const suggestions = [
   },
   {
     question: "What has he built?",
-    response: "Opening featured projects — ShopeeLaku, Creditopia, Redooceit, and more product work.",
+    response: "Opening featured projects: ShopeeLaku, Creditopia, Redooceit, and more.",
     target: "#projects",
   },
   {
@@ -161,8 +161,8 @@ const suggestions = [
 ];
 
 const introLines = [
-  "I build web apps, AI automations, and web3 products for founders and teams —",
-  "shipped to production, trusted by 15+ clients with 90% positive feedback.",
+  "I build web apps, AI automations, and web3 products for founders and teams.",
+  "Shipped to production. Trusted by 15+ clients with 90% positive feedback.",
 ];
 
 const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
@@ -277,7 +277,7 @@ function RoleDetailPanel({
 
 export function HeroSection() {
   const [inputValue, setInputValue] = useState("");
-  const [assistantMessage, setAssistantMessage] = useState("Ask Alfara anything · answers grounded in his profile");
+  const [assistantMessage, setAssistantMessage] = useState("Ask Alfara anything · answers come straight from his profile");
   const [isFocused, setIsFocused] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [seedQuestion, setSeedQuestion] = useState<string | null>(null);
@@ -334,14 +334,14 @@ export function HeroSection() {
   function openSidebarWith(query: string) {
     setSeedQuestion(query);
     setSidebarOpen(true);
-    setAssistantMessage("Talking with Alfara · answers grounded in his profile");
+    setAssistantMessage("Chatting with Alfara · answers come straight from his profile");
   }
 
   function closeSidebar() {
     setSidebarOpen(false);
     setSeedQuestion(null);
     setInputValue("");
-    setAssistantMessage("Ask Alfara anything · answers grounded in his profile");
+    setAssistantMessage("Ask Alfara anything · answers come straight from his profile");
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -628,7 +628,7 @@ export function HeroSection() {
                 <div className="relative min-w-0 flex-1 text-left">
                   {!inputValue && !isFocused ? (
                     <span className="pointer-events-none absolute left-0 top-1/2 hidden -translate-y-1/2 items-center text-[17px] text-[#71717b] sm:inline-flex">
-                      What would you like to know about alfara? Write here
+                      What do you want to know about Alfara? Type it here
                       <span className="hero-input-cursor ml-1 h-5 w-px bg-[#2388ff]" />
                     </span>
                   ) : null}
@@ -641,7 +641,7 @@ export function HeroSection() {
                       setAssistantMessage(
                         event.target.value
                           ? "Press send to ask Alfara"
-                          : "Ask Alfara anything · answers grounded in his profile",
+                          : "Ask Alfara anything · answers come straight from his profile",
                       );
                     }}
                     onFocus={() => setIsFocused(true)}
