@@ -55,8 +55,8 @@ export async function POST(req: Request) {
     model: getChatModel(),
     system: buildSystemPrompt(getChatContext()),
     messages: await convertToModelMessages(messages),
-    maxOutputTokens: 600,
-    temperature: 0.4,
+    maxOutputTokens: 260,
+    temperature: 0.5,
     onError: ({ error }) => {
       console.error("[api/chat] stream error", error);
     },
