@@ -188,7 +188,7 @@ export function AskAlfaraSidebar({
                   placeholder={
                     isStreaming ? "Alfara is typing…" : "Ask anything…"
                   }
-                  disabled={isStreaming}
+                  ref={composerRef}
                   value={input}
                 />
                 <button
