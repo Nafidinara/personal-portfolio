@@ -59,7 +59,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "lead-smart",
-    text: "Cleaned up our messy codebase. Dashboard is now much maintainable.",
+    text: "Cleaned up our messy codebase. Dashboard is now much more maintainable.",
     name: "Lead Smart Team",
     role: "Affiliate Marketing",
   },

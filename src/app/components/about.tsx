@@ -7,14 +7,14 @@ import { motion, useReducedMotion } from "motion/react";
 const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
 
 const ABOUT_HEADING =
-  "I’m Alfara. I turn ideas into working products — web apps, AI automations, and web3 systems that businesses actually run on.";
+  "I’m Alfara. I turn ideas into working products: web apps, AI automations, and web3 systems that businesses actually run on.";
 
 const BELIEF_TITLE = "How I Work";
 
 const BELIEF_PARAGRAPHS = [
   "Most projects don’t fail because of bad code. They fail because of slow feedback, unclear scope, and builders who disappear mid-project. I run things the opposite way: short cycles, a working demo you can click every week, and honest updates when something turns out harder than it looked.",
-  "Five years of shipping — freelancing for 15+ clients, backend engineering at a national telco, and founding my own funded startup — taught me to think like an owner, not a ticket-taker. I’ll push back on a feature that won’t move your numbers, and I’ll tell you when a cheaper path gets you the same result.",
-  "Whether you need a web app, an AI automation that erases hours of manual work, or a web3 product, the deal is the same: clear communication, production-quality code, and a partner who cares whether the thing actually works for your business — not just whether it compiles.",
+  "Five years of shipping taught me to think like an owner, not a ticket-taker: freelancing for 15+ clients, backend engineering at a national telco, and founding my own funded startup. I’ll push back on a feature that won’t move your numbers, and I’ll tell you when a cheaper path gets you the same result.",
+  "Whether you need a web app, an AI automation that erases hours of manual work, or a web3 product, the deal is the same: clear communication, production-quality code, and a partner who cares whether the thing actually works for your business, not just whether it compiles.",
   "If that sounds like the engineer you want on your side, tell me what you’re building. The first conversation costs nothing, and you’ll walk away with a clearer plan either way.",
 ];
 

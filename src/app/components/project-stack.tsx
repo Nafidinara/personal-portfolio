@@ -60,8 +60,8 @@ export function ProjectStack({ projects }: { projects: ProjectStackItem[] }) {
               PROJECTS
             </p>
             <h2 className="font-hanken text-[30px] font-semibold leading-[1.16] tracking-[-0.02em] text-[#09090b] sm:text-[34px]">
-              A software engineer that turn messy problems into products people actually use — across
-              software, blockchain, and AI.
+              I turn messy problems into products people actually use, across web, AI, and
+              blockchain.
             </h2>
           </div>
 
