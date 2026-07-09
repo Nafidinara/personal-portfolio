@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible, Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
+import "lenis/dist/lenis.css";
 import "./globals.css";
+import { SmoothScroll } from "./components/smooth-scroll";
 
 const atkinson = Atkinson_Hyperlegible({
   variable: "--font-atkinson",
@@ -34,9 +36,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${atkinson.variable} ${hanken.variable} ${plexMono.variable} scroll-smooth antialiased`}
+      className={`${atkinson.variable} ${hanken.variable} ${plexMono.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

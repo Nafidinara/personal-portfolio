@@ -7,6 +7,8 @@
   --blue-dark: #0044a7;
   --blue-soft: #e2f0ff;
   --border: #bfcfe6;
+  /* Outer margin the content column uses (max-w-[960px] centered). */
+  --page-margin: max(1rem, calc((100vw - 960px) / 2));
 }
 
 @theme inline {
