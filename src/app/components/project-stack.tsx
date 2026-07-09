@@ -2,11 +2,20 @@
 
 import Image from "next/image";
 import { ArrowUpRight, ExternalLink, GitBranch } from "lucide-react";
-import { motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
-import { useRef, useState } from "react";
+import type { MotionValue } from "motion/react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "motion/react";
+import type { ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
-const BAR_PEEK = 56;
+// Left edge respects the outer margin; the right side bleeds slightly past it.
+const PAD_LEFT = "var(--page-margin)";
+const PAD_RIGHT = "calc(var(--page-margin) - 2vw)";
 
 export type ProjectStackItem = {
   name: string;
@@ -21,146 +30,222 @@ export type ProjectStackItem = {
   repoUrl: string;
 };
 
+// The scroll-jacked pin only makes sense on pointer/desktop widths. Below this
+// we fall back to a native horizontally-scrollable, snap row (no pinning).
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    if (typeof window.matchMedia !== "function") return;
+    const query = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsDesktop(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  return isDesktop;
+}
+
 export function ProjectStack({ projects }: { projects: ProjectStackItem[] }) {
-  const n = projects.length;
-  const [active, setActive] = useState(n - 1);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const outerRef = useRef<HTMLDivElement>(null); // owns the vertical scroll distance
+  const trackRef = useRef<HTMLDivElement>(null); // the wide flex row of cards
+  const [distance, setDistance] = useState(0); // px of horizontal overflow to travel
+
   const shouldReduceMotion = useReducedMotion();
+  const isDesktop = useIsDesktop();
+  const enabled = !shouldReduceMotion && isDesktop;
 
+  // Measure the real overflow width so horizontal travel is exact per screen.
+  useEffect(() => {
+    if (!enabled) {
+      setDistance(0);
+      return;
+    }
+    const measure = () => {
+      const track = trackRef.current;
+      if (!track || track.children.length === 0) return;
+      // Translate so the LAST card's left edge lands on the same margin line
+      // the FIRST card started on (offsetLeft is relative to the positioned track).
+      const marginPx = parseFloat(getComputedStyle(track).paddingLeft) || 0;
+      const lastCard = track.children[track.children.length - 1] as HTMLElement;
+      setDistance(Math.max(0, lastCard.offsetLeft - marginPx));
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    if (trackRef.current) ro.observe(trackRef.current);
+    window.addEventListener("resize", measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, [projects, enabled]);
+
+  // Scroll-linked, scrubs both ways with scroll direction.
   const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
+    target: outerRef,
+    offset: ["start start", "end end"],
   });
-
-  useMotionValueEvent(scrollYProgress, "change", (progress) => {
-    // Progress 0..1 across the tall section. Map so cards swap gradually.
-    // Active window: 0.28..0.78 → step through n slots.
-    const window = 0.5;
-    const start = 0.28;
-    const normalized = Math.max(0, Math.min(1, (progress - start) / window));
-    const step = Math.min(n - 1, Math.floor(normalized * n));
-    const nextActive = n - 1 - step;
-    if (nextActive !== active) setActive(nextActive);
+  const smooth = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
   });
-
-  function advance() {
-    setActive((current) => (current - 1 + n) % n);
-  }
+  const x = useTransform(smooth, [0, 1], [0, -distance]);
 
   return (
-    <div
-      className="relative mt-[95px]"
-      ref={containerRef}
-      style={{ height: `${100 + n * 45}vh` }}
-    >
-      <div className="sticky top-24">
-        <div className="mx-auto max-w-[960px] px-4 sm:px-6 lg:px-0">
-          <div className="max-w-[704px]">
-            <p className="mb-4 font-mono text-[16px] font-bold tracking-[-0.01em] text-[#0044a7]">
-              PROJECTS
-            </p>
-            <h2 className="font-hanken text-[30px] font-semibold leading-[1.16] tracking-[-0.02em] text-[#09090b] sm:text-[34px]">
-              I turn messy problems into products people actually use, across web, AI, and
-              blockchain.
-            </h2>
-          </div>
-
-          <div className="relative mx-auto mt-[168px] h-[620px] w-full max-w-[560px]">
-            {projects.map((project, index) => {
-              const slot = (active - index + n) % n;
-              const isFront = slot === 0;
-
-              return (
-                <motion.article
-                  key={project.name}
-                  aria-current={isFront ? "true" : undefined}
-                  className="absolute inset-x-0 top-0 origin-top cursor-pointer overflow-hidden rounded-[18px] border border-[#dae9f8] bg-white shadow-[0_28px_70px_rgba(0,68,167,0.14)]"
-                  onClick={advance}
-                  animate={
-                    shouldReduceMotion
-                      ? { y: -slot * BAR_PEEK, opacity: 1, scale: 1 }
-                      : {
-                          y: -slot * BAR_PEEK,
-                          scale: 1 - slot * 0.025,
-                          opacity: 1,
-                        }
-                  }
-                  style={{ zIndex: n - slot }}
-                  transition={{ duration: 0.56, ease: PREMIUM_EASE }}
-                  whileHover={
-                    shouldReduceMotion || !isFront ? undefined : { y: -4, scale: 1.005 }
-                  }
-                >
-                  <h3 className="sr-only">{project.name}</h3>
-                  <BrowserBar file={project.file} category={project.category} />
-
-                  <motion.div
-                    animate={{
-                      opacity: isFront ? 1 : 0,
-                      height: isFront ? "auto" : 0,
-                    }}
-                    className="overflow-hidden"
-                    initial={false}
-                    transition={{ duration: 0.42, ease: PREMIUM_EASE }}
-                  >
-                    <div className="p-5">
-                      <ProjectPreview project={project} priority={index === n - 1} />
-
-                      <div className="mt-5 flex items-center justify-between gap-3">
-                        <p className="font-hanken text-[26px] font-semibold tracking-[-0.03em] text-[#09090b]">
-                          {project.name}
-                        </p>
-                        <div className="flex items-center gap-3">
-                          {project.liveUrl ? (
-                            <a
-                              aria-label={`${project.name} live site`}
-                              className="focus-ring rounded-full p-1.5 text-[#0044a7] transition-colors hover:bg-[#e2f0ff]"
-                              href={project.liveUrl}
-                              onClick={(event) => event.stopPropagation()}
-                              rel="noopener noreferrer"
-                              target="_blank"
-                            >
-                              <ExternalLink size={18} strokeWidth={1.9} />
-                            </a>
-                          ) : null}
-                          {project.repoUrl ? (
-                            <a
-                              aria-label={`${project.name} source code`}
-                              className="focus-ring rounded-full p-1.5 text-[#0044a7] transition-colors hover:bg-[#e2f0ff]"
-                              href={project.repoUrl}
-                              onClick={(event) => event.stopPropagation()}
-                              rel="noopener noreferrer"
-                              target="_blank"
-                            >
-                              <GitBranch size={18} strokeWidth={1.9} />
-                            </a>
-                          ) : null}
-                        </div>
-                      </div>
-
-                      <p className="mt-3 text-[15px] leading-[1.55] text-[#52525c]">
-                        {project.description}
-                      </p>
-
-                      <ul className="mt-4 flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <li
-                            className="rounded-[10px] border border-[#dae9f8] bg-white px-3 py-1 font-mono text-[13px] font-semibold text-[#0044a7]"
-                            key={tag}
-                          >
-                            {tag}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </motion.div>
-                </motion.article>
-              );
-            })}
-          </div>
+    <section className="relative mt-[95px]">
+      <div className="mx-auto max-w-[960px] px-4 sm:px-6 lg:px-0">
+        <div className="max-w-[704px]">
+          <p className="mb-4 font-mono text-[16px] font-bold tracking-[-0.01em] text-[#0044a7]">
+            PROJECTS
+          </p>
+          <h2 className="font-hanken text-[30px] font-semibold leading-[1.16] tracking-[-0.02em] text-[#09090b] sm:text-[34px]">
+            I turn messy problems into products people actually use, across web, AI, and
+            blockchain.
+          </h2>
         </div>
       </div>
-    </div>
+
+      {/* Outer height controls scroll length: one viewport + the overflow width
+          means ~1px vertical scroll per 1px horizontal travel. */}
+      <div
+        className="relative mt-[64px]"
+        ref={outerRef}
+        style={enabled ? { height: `calc(100vh + ${distance}px)` } : undefined}
+      >
+        <div
+          className={
+            enabled
+              ? "sticky top-0 flex h-screen items-center overflow-hidden [perspective:1600px]"
+              : "relative flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-4 [scrollbar-width:none] sm:px-6"
+          }
+        >
+          <motion.div
+            className={
+              enabled ? "flex items-center gap-[4vw] [transform-style:preserve-3d]" : "flex gap-6"
+            }
+            ref={trackRef}
+            style={
+              enabled
+                ? { x, position: "relative", paddingLeft: PAD_LEFT, paddingRight: PAD_RIGHT }
+                : undefined
+            }
+          >
+            {projects.map((project, index) =>
+              enabled ? (
+                <ProjectSlide key={project.name} x={x}>
+                  <ProjectCard priority={index === 0} project={project} />
+                </ProjectSlide>
+              ) : (
+                <div
+                  className="w-[clamp(280px,80vw,420px)] flex-none snap-center"
+                  key={project.name}
+                >
+                  <ProjectCard priority={index === 0} project={project} />
+                </div>
+              ),
+            )}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Fade/scale/tilt each card from its LIVE distance to viewport center. The
+// falloff comes entirely from the card's own opacity (light bg, no overlay).
+function ProjectSlide({ x, children }: { x: MotionValue<number>; children: ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  // -1 ≈ left edge, 0 = centered, 1 ≈ right edge. Derived from LAYOUT position
+  // (offsetLeft/offsetWidth, transform-independent) + the live track x, so the
+  // card's own scale/rotateY can't feed back into its measured position.
+  const pos = useTransform(x, (xv) => {
+    const el = ref.current;
+    if (!el || typeof window === "undefined") return 0;
+    const cardCenter = el.offsetLeft + el.offsetWidth / 2 + xv;
+    const vw = window.innerWidth;
+    return (cardCenter - vw / 2) / (vw / 2);
+  });
+
+  // Wide flat middle, ghost out only near the edges → smooth, no banding.
+  const opacity = useTransform(pos, [-1, -0.7, -0.4, 0.4, 0.7, 1], [0, 0.4, 1, 1, 0.4, 0]);
+  const scale = useTransform(pos, [-1, 0, 1], [0.9, 1.02, 0.9]);
+  const rotateY = useTransform(pos, [-1, 0, 1], [7, 0, -7]);
+
+  return (
+    <motion.div
+      className="w-[clamp(320px,44vw,560px)] flex-none [transform-style:preserve-3d]"
+      ref={ref}
+      style={{ opacity, scale, rotateY, willChange: "transform, opacity" }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function ProjectCard({
+  project,
+  priority,
+}: {
+  project: ProjectStackItem;
+  priority: boolean;
+}) {
+  return (
+    <article className="relative origin-top overflow-hidden rounded-[18px] border border-[#dae9f8] bg-white shadow-[0_28px_70px_rgba(0,68,167,0.14)]">
+      <h3 className="sr-only">{project.name}</h3>
+      <BrowserBar category={project.category} file={project.file} />
+
+      <div className="p-5">
+        <ProjectPreview priority={priority} project={project} />
+
+        <div className="mt-5 flex items-center justify-between gap-3">
+          <p className="font-hanken text-[26px] font-semibold tracking-[-0.03em] text-[#09090b]">
+            {project.name}
+          </p>
+          <div className="flex items-center gap-3">
+            {project.liveUrl ? (
+              <a
+                aria-label={`${project.name} live site`}
+                className="focus-ring rounded-full p-1.5 text-[#0044a7] transition-colors hover:bg-[#e2f0ff]"
+                href={project.liveUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <ExternalLink size={18} strokeWidth={1.9} />
+              </a>
+            ) : null}
+            {project.repoUrl ? (
+              <a
+                aria-label={`${project.name} source code`}
+                className="focus-ring rounded-full p-1.5 text-[#0044a7] transition-colors hover:bg-[#e2f0ff]"
+                href={project.repoUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <GitBranch size={18} strokeWidth={1.9} />
+              </a>
+            ) : null}
+          </div>
+        </div>
+
+        <p className="mt-3 text-[15px] leading-[1.55] text-[#52525c]">
+          {project.description}
+        </p>
+
+        <ul className="mt-4 flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <li
+              className="rounded-[10px] border border-[#dae9f8] bg-white px-3 py-1 font-mono text-[13px] font-semibold text-[#0044a7]"
+              key={tag}
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </article>
   );
 }
 
@@ -189,7 +274,7 @@ function ProjectPreview({
           height={project.previewSize.height}
           onError={() => setFailed(true)}
           priority={priority}
-          sizes="(min-width: 768px) 640px, 100vw"
+          sizes="(min-width: 1024px) 44vw, 80vw"
           src={project.preview}
           width={project.previewSize.width}
         />
