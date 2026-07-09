@@ -47,7 +47,7 @@ export function About({ avatarSrc = "/figma-assets/hero-avatar.png" }: { avatarS
         >
           <motion.div
             animate={shouldReduceMotion ? undefined : { y: [0, -5, 0] }}
-            className="absolute right-8 top-[-46px] z-10 h-[100px] w-[100px] overflow-hidden rounded-full bg-white"
+            className="absolute right-8 top-[-46px] z-10 h-[100px] w-[100px]"
             transition={{
               duration: 5.4,
               ease: "easeInOut",
@@ -57,7 +57,7 @@ export function About({ avatarSrc = "/figma-assets/hero-avatar.png" }: { avatarS
           >
             <Image
               alt="Alfara portrait"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain"
               height={220}
               sizes="84px"
               src={avatarSrc}
@@ -90,7 +90,7 @@ export function About({ avatarSrc = "/figma-assets/hero-avatar.png" }: { avatarS
       </div>
 
       <motion.div
-        className="mt-8 flex justify-center"
+        className="mt-16 flex justify-center"
         initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
         transition={{ delay: 0.18, duration: 0.44, ease: PREMIUM_EASE }}
         viewport={{ once: true }}

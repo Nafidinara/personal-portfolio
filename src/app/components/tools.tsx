@@ -3,14 +3,20 @@
 import { Box, type LucideIcon, Monitor, Server, Sparkles } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import type { IconType } from "react-icons";
-import { LuCloud, LuLayers, LuZap } from "react-icons/lu";
+import { GiCrabClaw } from "react-icons/gi";
+import { LuAtom, LuCloud, LuLayers } from "react-icons/lu";
+import { RiOpenaiFill } from "react-icons/ri";
 import {
   SiAnthropic,
   SiDocker,
   SiGithubactions,
   SiGo,
+  SiGooglecloud,
+  SiHermes,
   SiInternetcomputer,
   SiLangchain,
+  SiLinux,
+  SiN8N,
   SiNextdotjs,
   SiNuxt,
   SiPython,
@@ -67,6 +73,8 @@ const toolCategories: ToolCategory[] = [
     techs: [
       { name: "Docker", Icon: SiDocker, tint: "text-[#2496ed]" },
       { name: "AWS", Icon: LuCloud, tint: "text-[#ff9900]" },
+      { name: "GCP", Icon: SiGooglecloud, tint: "text-[#4285f4]" },
+      { name: "Linux", Icon: SiLinux, tint: "text-[#0f172a]" },
       { name: "CI/CD", Icon: SiGithubactions, tint: "text-[#2088ff]" },
     ],
   },
@@ -76,9 +84,13 @@ const toolCategories: ToolCategory[] = [
     CategoryIcon: Sparkles,
     iconBg: "bg-[#f97316]",
     techs: [
-      { name: "OpenAI", Icon: LuZap, tint: "text-[#10a37f]" },
+      { name: "OpenAI", Icon: RiOpenaiFill, tint: "text-[#10a37f]" },
       { name: "Claude", Icon: SiAnthropic, tint: "text-[#d97706]" },
       { name: "Langchain", Icon: SiLangchain, tint: "text-[#1c3c3c]" },
+      { name: "N8N", Icon: SiN8N, tint: "text-[#ea4b71]" },
+      { name: "Higgsfield", Icon: LuAtom, tint: "text-[#7c3aed]" },
+      { name: "Hermes", Icon: SiHermes, tint: "text-[#0f172a]" },
+      { name: "OpenClaw", Icon: GiCrabClaw, tint: "text-[#e0432d]" },
     ],
   },
   {

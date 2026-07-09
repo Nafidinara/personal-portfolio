@@ -1,10 +1,7 @@
 import Image from "next/image";
-import {
-  ExternalLink,
-  GitBranch,
-  Mail,
-  MessageCircle,
-} from "lucide-react";
+import { Mail } from "lucide-react";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { SiGithub, SiInstagram } from "react-icons/si";
 import { HeroSection } from "./components/hero-section";
 import { PillNav } from "./components/pill-nav";
 import { About } from "./components/about";
@@ -69,7 +66,7 @@ const moreProjects = [
     viewLabel: "Votergate",
     description:
       "Voting on blockchain with zero-knowledge proofs: elections stay transparent, every vote is verifiable, and no ballot reveals who cast it.",
-    logo: `${assetBase}/more-project-logo-01.png`,
+    logo: `${assetBase}/more-project-logo-01-flat.png`,
     logoSize: { width: 306, height: 306 },
     hover: `${assetBase}/hover-votergate.png`,
     hoverSize: { width: 2210, height: 2026 },
@@ -80,7 +77,7 @@ const moreProjects = [
     viewLabel: "Taledotfun",
     description:
       "Web3 storytelling on Solana. Creators publish and get paid for cultural narratives through NFTs, smart contracts, and DAO governance.",
-    logo: `${assetBase}/more-project-logo-02.png`,
+    logo: `${assetBase}/more-project-logo-02-flat.png`,
     logoSize: { width: 280, height: 288 },
     hover: `${assetBase}/hover-talefun.png`,
     hoverSize: { width: 2623, height: 1865 },
@@ -91,7 +88,7 @@ const moreProjects = [
     viewLabel: "TourEase",
     description:
       "Travel planner that builds optimized routes and personal itineraries, so you see more of a destination in the time you have.",
-    logo: `${assetBase}/more-project-logo-03.png`,
+    logo: `${assetBase}/more-project-logo-03-flat.png`,
     logoSize: { width: 336, height: 336 },
     hover: `${assetBase}/hover-tourease.png`,
     hoverSize: { width: 2706, height: 1869 },
@@ -184,7 +181,7 @@ const achievements = [
       "The brief: solve a real traditional-finance problem with ICP’s on-chain technology, and deliver impact to end users, not just impress the judges. We built Creditopia, a peer-to-peer (P2P) lending platform on the Internet Computer that connects MSMEs with a global network of lenders, offering financing that’s secure, transparent, and efficient. Built with Rust, Motoko, JavaScript, and Vue.js.",
       "The most memorable part was competing alongside teammates from completely different backgrounds, different campuses, different jobs, while managing our energy across a full 48 hours and making big decisions under tight time pressure. **We finished in 1st place and won $3,000 in funding.**",
     ],
-    images: ["", ""],
+    images: ["/achievements/icp-01.jpeg", "/achievements/icp-02.jpeg"],
   },
   {
     id: "apicta",
@@ -208,7 +205,7 @@ const achievements = [
       "We built Myoscope Alert: a myocardial infarction (heart attack) detection system that pairs a digital stethoscope with a machine learning model trained on 2,500 heartbeat signals, turning an affordable device into an early-warning tool.",
       "Competing against 300+ teams from different universities and industries across Asia Pacific, we brought home a **Merit award for Indonesia** in Hong Kong.",
     ],
-    images: ["", ""],
+    images: ["/achievements/apicta-01.jpg", "/achievements/apicta-02.jpeg"],
   },
   {
     id: "identik",
@@ -232,7 +229,7 @@ const achievements = [
       "We entered VoterGate, a modern voting platform built for high security and scalability using blockchain and decentralized technology, so that elections become transparent, verifiable, and tamper-resistant.",
       "Contending with 190+ teams from different industries across Indonesia, VoterGate took **1st Runner Up nationally**.",
     ],
-    images: ["", ""],
+    images: ["/achievements/identik-01.jpeg", "/achievements/identik-02.jpeg"],
   },
 ];
 
@@ -259,9 +256,9 @@ const blogPosts = [
 
 const contacts = [
   ["EMAIL", "nafidinara@gmail.com", Mail, "mailto:nafidinara@gmail.com?subject=Project%20inquiry"],
-  ["LINKEDIN", "linkedin.com/in/nafidinara", ExternalLink, "https://linkedin.com/in/nafidinara"],
-  ["GITHUB", "github.com/nafidinara", GitBranch, "https://github.com/nafidinara"],
-  ["TWITTER", "x.com/nafidinara", MessageCircle, "https://x.com/nafidinara"],
+  ["LINKEDIN", "linkedin.com/in/alfarand", FaLinkedinIn, "https://www.linkedin.com/in/alfarand/"],
+  ["GITHUB", "github.com/nafidinara", SiGithub, "https://github.com/nafidinara"],
+  ["INSTAGRAM", "instagram.com/alfaraaa.nd", SiInstagram, "https://www.instagram.com/alfaraaa.nd/"],
 ] as const;
 
 function AvatarLogo({ small = false }: { small?: boolean }) {
@@ -274,7 +271,7 @@ function AvatarLogo({ small = false }: { small?: boolean }) {
       width={338}
       height={338}
       priority={!small}
-      className={`rounded-full object-cover shadow-[0_28px_80px_rgba(0,68,167,0.16)] ${
+      className={`object-contain drop-shadow-[0_28px_80px_rgba(0,68,167,0.16)] ${
         small ? "h-[120px] w-[120px]" : "h-[169px] w-[169px]"
       }`}
       sizes={`${size}px`}
@@ -390,8 +387,9 @@ function ContactSection() {
         <AvatarLogo small />
         <h2 className="mt-9 font-hanken text-[42px] font-bold tracking-[-0.05em] text-[#09090b]">Have a project in mind?</h2>
         <p className="mt-5 text-[20px] leading-[1.4] text-[#52525c]">
-          Tell me what you’re building and where you’re stuck. I reply within 24 hours. Even if we
-          don’t end up working together, you’ll leave with a clearer plan.
+          Tell me what you’re building and where you’re stuck. I usually reply within minutes, and
+          I’m reachable 24/7. The only time I go quiet is when I’m asleep or in the shower. Even if
+          we don’t end up working together, you’ll leave with a clearer plan.
         </p>
         <a className="focus-ring mt-8 inline-flex h-14 items-center justify-center rounded-full border border-[#005fc6] bg-[#007aff] px-8 font-hanken text-[20px] font-semibold text-white shadow-[inset_0_1px_0_#8cc2ff,0_12px_32px_rgba(0,122,255,0.25)]" href="mailto:nafidinara@gmail.com?subject=Project%20inquiry&body=Hi%20Alfara%2C%0A%0AWhat%20I%27m%20building%3A%20%0AWhere%20I%27m%20stuck%3A%20%0ATimeline%3A%20%0A">
           Send Me Your Project
@@ -411,8 +409,8 @@ function ContactSection() {
       <footer className="mt-20 flex flex-col gap-3 border-t border-[#bfcfe6] pt-8 text-[16px] text-[#71717b] sm:flex-row sm:items-center sm:justify-between">
         <span>2026</span>
         <span>Alfara Nafi Dinara</span>
-        <span>UTC+7</span>
-        <span>Jakarta, Indonesia</span>
+        <span>WITA (UTC+8)</span>
+        <span>Bali, Indonesia</span>
       </footer>
     </section>
   );
