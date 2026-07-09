@@ -58,7 +58,8 @@ The work I actively want more of, ranked:
    niche I'm most excited about; the chat you're using now is proof of the pattern.
 
 ## How to reach me
-- **Email (primary):** nafidinara@gmail.com — I reply within 12 hours.
+- **Email (primary):** nafidinara@gmail.com — I usually reply within minutes and I'm
+  reachable 24/7; the only time I go quiet is when I'm asleep or in the shower.
 - **WhatsApp:** https://wa.me/6289648802792
 - **LinkedIn:** https://linkedin.com/in/alfarand
 - **GitHub:** https://github.com/Nafidinara

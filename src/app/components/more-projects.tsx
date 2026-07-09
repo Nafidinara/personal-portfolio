@@ -112,7 +112,7 @@ function MoreProjectCard({
       >
         <Image
           alt={`${project.name} logo`}
-          className="h-full w-full object-contain drop-shadow-[0_16px_28px_rgba(0,68,167,0.14)]"
+          className="h-full w-full object-contain"
           height={project.logoSize.height}
           sizes="140px"
           src={project.logo}

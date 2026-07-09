@@ -128,7 +128,7 @@ export function AskAlfaraSidebar({
                   Alfara
                 </div>
                 <div className="mt-0.5 text-[12px] text-[#5b6472]">
-                  Usually replies within 12 hours
+                  Usually replies within minutes
                 </div>
               </div>
               <button
