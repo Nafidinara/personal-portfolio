@@ -18,7 +18,7 @@ const BELIEF_PARAGRAPHS = [
   "If that sounds like the engineer you want on your side, tell me what you’re building. The first conversation costs nothing, and you’ll walk away with a clearer plan either way.",
 ];
 
-export function About({ avatarSrc = "/figma-assets/hero-avatar.png" }: { avatarSrc?: string }) {
+export function About({ avatarSrc = "/avatar/profile.png" }: { avatarSrc?: string }) {
   const shouldReduceMotion = useReducedMotion();
 
   return (

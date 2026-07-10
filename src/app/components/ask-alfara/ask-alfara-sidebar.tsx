@@ -116,7 +116,7 @@ export function AskAlfaraSidebar({
                   className="rounded-full object-cover"
                   fill
                   sizes="42px"
-                  src="/figma-assets/hero-avatar.png"
+                  src="/avatar/profile.png"
                 />
                 <span
                   aria-hidden="true"

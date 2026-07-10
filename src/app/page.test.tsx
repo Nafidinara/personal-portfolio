@@ -57,7 +57,7 @@ describe("portfolio homepage", () => {
 
     const avatar = screen.getByRole("img", { name: /Alfara profile portrait/i });
 
-    expect(avatar).toHaveAttribute("src", expect.stringContaining("hero-avatar.png"));
+    expect(avatar).toHaveAttribute("src", expect.stringContaining("avatar%2Fprofile.png"));
     expect(avatar.className).not.toContain("rounded-full");
     expect(avatar.className).not.toContain("border");
   });
@@ -69,7 +69,7 @@ describe("portfolio homepage", () => {
 
     await waitFor(() => {
       expect(screen.getAllByRole("img", { name: /Alfara profile portrait/i })).toEqual(
-        expect.arrayContaining([expect.objectContaining({ src: expect.stringContaining("hero-avatar-hover.png") })]),
+        expect.arrayContaining([expect.objectContaining({ src: expect.stringContaining("avatar%2Fprofile-hover.png") })]),
       );
     });
     expect(screen.getAllByRole("button", { name: /Software Engineer/i }).length).toBeGreaterThan(0);
