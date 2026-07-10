@@ -13,7 +13,6 @@ import { Testimonials } from "./components/testimonials";
 import { Tools } from "./components/tools";
 import { Blog } from "./components/blog";
 
-const assetBase = "/figma-assets";
 
 const featuredProjects = [
   {
@@ -24,7 +23,7 @@ const featuredProjects = [
       "Dropshipping automation that runs multiple stores from one dashboard. Listings, pricing, and performance tracking happen automatically, so sellers spend minutes on work that used to eat whole days.",
     tags: ["NuxtJS", "Prisma", "Psql", "Python", "Docker", "Javascript"],
     accent: "from-[#f9fecd] via-[#e2f0ff] to-white",
-    preview: `${assetBase}/featured-project-01.png`,
+    preview: `/projects/featured/shopeelaku.png`,
     previewSize: { width: 1395, height: 766 },
     previewBg: "#f9fecd",
     liveUrl: "#",
@@ -38,7 +37,7 @@ const featuredProjects = [
       "Peer-to-peer lending on the Internet Computer. Smart contracts handle the financing, every transaction lives on-chain, and SMEs get access to lenders far beyond their local banks.",
     tags: ["VueJS", "Rust", "Javascript", "Motoko"],
     accent: "from-[#e2f0ff] via-white to-[#f9fecd]",
-    preview: `${assetBase}/featured-project-02.png`,
+    preview: `/projects/featured/creditopia.png`,
     previewSize: { width: 1395, height: 766 },
     previewBg: "#0f172a",
     liveUrl: "#",
@@ -52,7 +51,7 @@ const featuredProjects = [
       "Circular waste management, end to end: IoT sensors feed real-time monitoring and operations dashboards, so communities process more waste with less guesswork.",
     tags: ["NextJS", "Golang", "Psql", "Redis", "Flutter"],
     accent: "from-white via-[#e2f0ff] to-[#f9fecd]",
-    preview: `${assetBase}/featured-project-03.png`,
+    preview: `/projects/featured/redooceit.png`,
     previewSize: { width: 1395, height: 766 },
     previewBg: "#3ce0b0",
     liveUrl: "https://redooceit.com",
@@ -66,9 +65,9 @@ const moreProjects = [
     viewLabel: "Votergate",
     description:
       "Voting on blockchain with zero-knowledge proofs: elections stay transparent, every vote is verifiable, and no ballot reveals who cast it.",
-    logo: `${assetBase}/more-project-logo-01-flat.png`,
+    logo: `/projects/logo/votergate.png`,
     logoSize: { width: 306, height: 306 },
-    hover: `${assetBase}/hover-votergate.png`,
+    hover: `/projects/hover/votergate.png`,
     hoverSize: { width: 2210, height: 2026 },
     viewUrl: "#",
   },
@@ -77,9 +76,9 @@ const moreProjects = [
     viewLabel: "Taledotfun",
     description:
       "Web3 storytelling on Solana. Creators publish and get paid for cultural narratives through NFTs, smart contracts, and DAO governance.",
-    logo: `${assetBase}/more-project-logo-02-flat.png`,
+    logo: `/projects/logo/taledotfun.png`,
     logoSize: { width: 280, height: 288 },
-    hover: `${assetBase}/hover-talefun.png`,
+    hover: `/projects/hover/taledotfun.png`,
     hoverSize: { width: 2623, height: 1865 },
     viewUrl: "#",
   },
@@ -88,9 +87,9 @@ const moreProjects = [
     viewLabel: "TourEase",
     description:
       "Travel planner that builds optimized routes and personal itineraries, so you see more of a destination in the time you have.",
-    logo: `${assetBase}/more-project-logo-03-flat.png`,
+    logo: `/projects/logo/tourease.png`,
     logoSize: { width: 336, height: 336 },
-    hover: `${assetBase}/hover-tourease.png`,
+    hover: `/projects/hover/tourease.png`,
     hoverSize: { width: 2706, height: 1869 },
     viewUrl: "#",
   },
@@ -102,7 +101,7 @@ const experiences = [
     type: "Self Employed",
     role: "Freelance Software Engineer",
     date: "Jan 2022 - Present",
-    logo: `${assetBase}/experience-logo-01.png`,
+    logo: `/experience/world-wide.png`,
     bullets: [
       "Four years of freelance work with 15+ individuals and companies, building websites, services, and the internal tools their businesses run on.",
       "Shipped clean, maintainable code across Laravel, Node.js, Express, Flask, TypeScript, Solidity, and Vue.js. 90% of client reviews came back positive.",
@@ -113,7 +112,7 @@ const experiences = [
     type: "Full Time",
     role: "Founder & Chief Executive Officer",
     date: "Mar 2023 - Nov 2025",
-    logo: `${assetBase}/experience-logo-02.png`,
+    logo: `/experience/redooce.png`,
     bullets: [
       "As Founder & CEO, I lead Redooceit’s vision, product direction, business strategy, partnerships, and operations, building it from concept into an early-stage sustainability technology venture.",
       "Built Redooceit across 4 main service lines: waste management dashboard, project-based collaboration, event waste management, and sustainability partnership.",
@@ -127,7 +126,7 @@ const experiences = [
     type: "Internship",
     role: "Blockchain Engineer",
     date: "Aug 2024 - Feb 2025",
-    logo: `${assetBase}/experience-logo-03.png`,
+    logo: `/experience/hara.png`,
     bullets: [
       "Developed blockchain traceability solutions for a large enterprise client, making supply-chain data verifiable end to end.",
       "Benchmarked network performance across EVM and non-EVM platforms (Avalanche, Polygon, Hedera, Ripple) and evaluated Hyperledger frameworks for enterprise use.",
@@ -139,7 +138,7 @@ const experiences = [
     type: "Full Time",
     role: "Backend Engineer",
     date: "Jan 2022 - Nov 2022",
-    logo: `${assetBase}/experience-logo-04.png`,
+    logo: `/experience/kecilin.png`,
     bullets: [
       "Built and deployed a real-time dashboard that monitors 100+ CCTVs running across Indonesia, using Express.js, Node.js, and MongoDB.",
       "Led blockchain storage development for Kecilin's compression pipeline, rolled out to the internal team and 2 Kecilin.id clients. Built with Solidity, IPFS, Hardhat, and Node.js.",
@@ -150,7 +149,7 @@ const experiences = [
     type: "Internship",
     role: "Backend Engineer",
     date: "Apr 2021 - Jul 2021",
-    logo: `${assetBase}/experience-logo-05.png`,
+    logo: `/experience/telkom.png`,
     bullets: [
       "Managed API documentation for 2 products using Swagger and Postman. Drove the team's adoption of scrum, cutting time-to-market by 30% and lifting productivity by 40%.",
       "Worked with the lead engineer to refactor a product from Node.js to TypeScript, adding features and unit tests and raising coverage above 85%.",
@@ -266,7 +265,7 @@ function AvatarLogo({ small = false }: { small?: boolean }) {
 
   return (
     <Image
-      src={`${assetBase}/hero-avatar.png`}
+      src={`/avatar/profile.png`}
       alt={small ? "" : "Alfara profile portrait"}
       width={338}
       height={338}

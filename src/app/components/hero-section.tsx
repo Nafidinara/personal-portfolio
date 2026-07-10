@@ -13,13 +13,12 @@ import { FormEvent, KeyboardEvent, PointerEvent, useMemo, useState } from "react
 
 import { AskAlfaraSidebar } from "./ask-alfara/ask-alfara-sidebar";
 
-const assetBase = "/figma-assets";
 
 const heroRoles = [
   {
     id: "software",
     label: "Software Engineer",
-    icon: `${assetBase}/software-e.png`,
+    icon: `/hero/software.png`,
     x: 24,
     y: 4,
     width: 190,
@@ -28,7 +27,7 @@ const heroRoles = [
   {
     id: "ai",
     label: "AI Automation Builder",
-    icon: `${assetBase}/ai.png`,
+    icon: `/hero/ai.png`,
     x: 486,
     y: 38,
     width: 180,
@@ -37,7 +36,7 @@ const heroRoles = [
   {
     id: "blockchain",
     label: "Blockchain Engineer",
-    icon: `${assetBase}/chain.png`,
+    icon: `/hero/blockchain.png`,
     x: 30,
     y: 222,
     width: 176,
@@ -46,7 +45,7 @@ const heroRoles = [
   {
     id: "startup",
     label: "Startup Life",
-    icon: `${assetBase}/startup.png`,
+    icon: `/hero/startup.png`,
     x: 496,
     y: 220,
     width: 190,
@@ -462,7 +461,7 @@ export function HeroSection() {
               height={isAvatarHovered ? 350 : 320}
               priority
               sizes={isAvatarHovered ? "276px" : "169px"}
-              src={isAvatarHovered ? `${assetBase}/hero-avatar-hover.png` : `${assetBase}/hero-avatar.png`}
+              src={isAvatarHovered ? `/avatar/profile-hover.png` : `/avatar/profile.png`}
               width={isAvatarHovered ? 276 : 320}
             />
           </motion.div>
