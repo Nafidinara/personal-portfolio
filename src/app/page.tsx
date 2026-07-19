@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { SiGithub, SiInstagram } from "react-icons/si";
 import { HeroSection } from "./components/hero-section";
@@ -12,6 +12,7 @@ import { ProjectStack } from "./components/project-stack";
 import { Testimonials } from "./components/testimonials";
 import { Tools } from "./components/tools";
 import { Blog } from "./components/blog";
+import { sortedArticles } from "@/lib/blog-data";
 
 
 const featuredProjects = [
@@ -232,26 +233,12 @@ const achievements = [
   },
 ];
 
-const blogPosts = [
-  {
-    title: "An LLM-Based Conversational Recommender for Long-Term Crypto Portfolios",
-    description:
-      "How we built and published a conversational recommender system that personalizes long-term cryptocurrency portfolios. Presented at IEEE ICoICT 2025.",
-    date: "May, 2025",
-  },
-  {
-    title: "EVM vs Non-EVM for Enterprise Traceability: What I Learned at HARA",
-    description:
-      "Benchmarking Avalanche, Polygon, Hedera, Ripple, and Hyperledger for a real enterprise supply-chain traceability system, and where each one breaks.",
-    date: "Feb, 2025",
-  },
-  {
-    title: "Automating 10,000+ Products Across 30 Stores: Architecture Notes",
-    description:
-      "The queue-driven design behind ShopeeLaku's dropshipping automation, and why days of manual product management collapsed into minutes.",
-    date: "June, 2025",
-  },
-];
+const blogPosts = sortedArticles.slice(0, 3).map((article) => ({
+  title: article.title,
+  description: article.description,
+  date: article.date,
+  url: `/blogs/${article.slug}`,
+}));
 
 const contacts = [
   ["EMAIL", "nafidinara@gmail.com", Mail, "mailto:nafidinara@gmail.com?subject=Project%20inquiry"],
@@ -375,6 +362,13 @@ function BlogSection() {
         Notes I write down so I don&apos;t pay for the same lesson twice.
       </SectionHeading>
       <Blog posts={blogPosts} />
+      <a
+        className="focus-ring mt-10 inline-flex h-12 items-center justify-center gap-2 rounded-full border border-[#bfcfe6] bg-white px-7 font-hanken text-[16px] font-semibold text-[#09090b] shadow-[0_12px_36px_rgba(0,68,167,0.05)] transition-colors hover:border-[#0044a7] hover:text-[#0044a7]"
+        href="/blogs"
+      >
+        Read all articles
+        <ArrowRight size={18} />
+      </a>
     </section>
   );
 }
