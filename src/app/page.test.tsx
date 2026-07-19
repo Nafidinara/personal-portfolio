@@ -11,7 +11,8 @@ describe("portfolio homepage", () => {
     expect(screen.getByRole("heading", { name: /Alfara Nafi Dinara/i })).toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: /Primary/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /ShopeeLaku/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /Creditopia/i })).toBeInTheDocument();
+    // Exact match: a blog card title also contains "Creditopia", so match the project heading only.
+    expect(screen.getByRole("heading", { name: "Creditopia" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Redooceit/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Experiences/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Achievements/i })).toBeInTheDocument();
