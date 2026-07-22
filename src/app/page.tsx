@@ -27,7 +27,7 @@ const featuredProjects = [
     preview: `/projects/featured/shopeelaku.png`,
     previewSize: { width: 1395, height: 766 },
     previewBg: "#f9fecd",
-    liveUrl: "#",
+    liveUrl: "https://shopeelaku.nafidinara.com/",
     repoUrl: "#",
   },
   {
@@ -41,7 +41,7 @@ const featuredProjects = [
     preview: `/projects/featured/creditopia.png`,
     previewSize: { width: 1395, height: 766 },
     previewBg: "#0f172a",
-    liveUrl: "#",
+    liveUrl: "https://creditopia.nafidinara.com/",
     repoUrl: "#",
   },
   {
@@ -81,7 +81,7 @@ const moreProjects = [
     logoSize: { width: 280, height: 288 },
     hover: `/projects/hover/taledotfun.png`,
     hoverSize: { width: 2623, height: 1865 },
-    viewUrl: "#",
+    viewUrl: "https://taledotfun.nafidinara.com/",
   },
   {
     name: "Tourease",
